@@ -1,22 +1,74 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import '@mantine/core/styles.css';
+import AppConfig from '@utils/AppConfig';
+import { _defaultColorScheme } from '@utils/constant';
+import { theme } from '@utils/theme';
 
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata, Viewport } from 'next';
+import dynamic from 'next/dynamic';
+
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Zerolimit",
-  description: "The ultimate Web3 Dashboard",
+  metadataBase: new URL(AppConfig.site as string),
+  title: AppConfig.title + ' | ' + AppConfig.description,
+  description: AppConfig.description,
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US',
+    },
+  },
+  applicationName: AppConfig.site_name,
+  icons: {
+    icon: '/icon/logo-light.png',
+    apple: '/icon/apple-touch-icon.png',
+  },
+  other: {
+    version: AppConfig.version,
+  },
+  appleWebApp: {
+    title: AppConfig.title,
+    statusBarStyle: 'black-translucent',
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    creator: AppConfig.author.name,
+    title: {
+      default: AppConfig.title,
+      template: AppConfig.title_template,
+    },
+    description: AppConfig.description,
+  },
+  keywords: AppConfig.keywords,
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: 'black',
+};
+
+const MainAppShell = dynamic(() => import('@components/_MainAppShell'));
+
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <ColorSchemeScript defaultColorScheme={_defaultColorScheme} />
+      </head>
+      <body>
+        <MantineProvider theme={theme} defaultColorScheme={_defaultColorScheme}>
+          <MainAppShell>{children}</MainAppShell>
+        </MantineProvider>
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

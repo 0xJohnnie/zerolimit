@@ -1,0 +1,20 @@
+.buttonDefault {
+  background-color: light-dark(
+    var(--light-color-secondary),
+    var(--dark-color-secondary)
+  );
+  color: light-dark(var(--dark-color-primary), var(--light-color-primary));
+
+  @mixin hover {
+    background-color: var(--hover-color-primary);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.buttonSelected {
+  background-color: var(--hover-color-primary);
+  color: var(--light-color-primary);
+}

@@ -1,18 +1,17 @@
-import { Welcome } from '@components/Welcome';
 import { _cssTitle } from '@utils/constant';
 
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: '/',
+    canonical: '/dappstore',
     languages: {
       'en-US': '/en-US',
     },
   },
 };
-
-const Home = () => {
-  return <Welcome />;
+const DappStore = () => {
+  return <h1 className={_cssTitle}>Dappstore</h1>;
 };
-export default Home;
+
+export default DappStore;

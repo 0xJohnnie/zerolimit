@@ -3,27 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --dark-color-primary: #0b0b0b;
+  --dark-color-secondary: #404040;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  --light-color-primary: #fefefe;
+  --light-color-secondary: #d5d7e0;
+
+  --hover-color-primary: #513391;
+  --hover-color-secondary: #9b74f0;
+
+  @mixin light-root {
+    --mantine-color-body: var(--light-color-primary);
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @mixin dark-root {
+    --mantine-color-body: var(--dark-color-primary);
+  }
 }
 
 @layer utilities {
