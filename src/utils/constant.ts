@@ -23,10 +23,11 @@ export const _screenBreakpoint = 576;
 export const _navBarWidth = 250;
 
 // Logo
-export const _logoPathDark = '/icon/logo-light.png';
-export const _logoPathLight = '/icon/logo-dark.png';
 export const _logoSize = 42;
+export const _logo = '/icon/android-chrome-512x512.png';
+export const _logoApple = '/icon/apple-touch-icon.png';
 
+// Icon
 export const _iconSize = 32;
 
 export const _tabBarButtonSize = 'xl';

@@ -29,8 +29,7 @@ import {
   _hideHeader,
   _hideNavBar,
   _hrefHome,
-  _logoPathDark,
-  _logoPathLight,
+  _logo,
   _logoSize,
   _navBarWidth,
 } from '@utils/constant';
@@ -71,12 +70,16 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
             preventGrowOverflow
           >
             <Link href={_hrefHome} aria-label="logo">
-              <Center style={{ gap: 4 }}>
+              <Center style={{ gap: 8 }}>
                 <Image
-                  src={colorScheme === 'dark' ? _logoPathDark : _logoPathLight}
+                  src={_logo}
                   alt="logo"
                   width={_logoSize}
                   height={_logoSize}
+                  style={{
+                    filter: colorScheme === 'dark' ? 'invert(1)' : 'invert(0)',
+                    borderRadius: 8,
+                  }}
                 />
                 <Title order={2}>{AppConfig.site_name}</Title>
               </Center>

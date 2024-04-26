@@ -5,7 +5,7 @@ import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 
 import AppConfig from '@utils/AppConfig';
-import { _defaultColorScheme } from '@utils/constant';
+import { _defaultColorScheme, _logo, _logoApple } from '@utils/constant';
 import { theme } from '@utils/theme';
 
 import './globals.css';
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   applicationName: AppConfig.site_name,
   icons: {
-    icon: '/icon/logo-light.png',
-    apple: '/icon/apple-touch-icon.png',
+    icon: _logo,
+    apple: _logoApple,
   },
   other: {
     version: AppConfig.version,
@@ -45,6 +45,7 @@ export const metadata: Metadata = {
     description: AppConfig.description,
   },
   keywords: AppConfig.keywords,
+  manifest: '/manifest.json',
 };
 
 export const viewport: Viewport = {
