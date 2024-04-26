@@ -1,6 +1,10 @@
 import { Metadata } from 'next';
 
-import { _cssTitle } from '@utils/constant';
+import { Stack, Text } from '@mantine/core';
+
+import InstallPWA from '@components/Pwa';
+
+import { _appVersion, _cssTitle } from '@utils/constant';
 
 export const metadata: Metadata = {
   alternates: {
@@ -12,7 +16,18 @@ export const metadata: Metadata = {
 };
 
 const Settings = () => {
-  return <h1 className={_cssTitle}>Settings</h1>;
+  return (
+    <>
+      <h1 className={_cssTitle}>Settings</h1>
+
+      <Stack>
+        <InstallPWA />
+        <Text ta="center" size="sm" c="dimmed">
+          App version : {_appVersion}
+        </Text>
+      </Stack>
+    </>
+  );
 };
 
 export default Settings;

@@ -47,3 +47,17 @@ export const useIsMobileScreen = () => {
   const { width: screenWidth } = useViewportSize();
   return !(screenWidth <= _screenBreakpoint);
 };
+
+export const getPWADisplayMode = () => {
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+
+  if (document.referrer.startsWith('android-app://')) {
+    return 'twa';
+  } else if (
+    (navigator as Navigator & { standalone?: boolean }).standalone ||
+    isStandalone
+  ) {
+    return 'standalone';
+  }
+  return 'browser';
+};

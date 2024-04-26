@@ -1,3 +1,6 @@
+export const _appVersion =
+  process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA?.slice(0, 6).trim() ?? '';
+
 /*  >>>>> THEME <<<<< */
 export const _defaultColorScheme = 'dark';
 export const _defaultPrimaryColor = 'violet';
