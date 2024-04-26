@@ -1,11 +1,12 @@
+import type { Metadata, Viewport } from 'next';
+import dynamic from 'next/dynamic';
+
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
+
 import AppConfig from '@utils/AppConfig';
 import { _defaultColorScheme } from '@utils/constant';
 import { theme } from '@utils/theme';
-
-import type { Metadata, Viewport } from 'next';
-import dynamic from 'next/dynamic';
 
 import './globals.css';
 
@@ -50,7 +51,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  userScalable: true,
+  userScalable: false,
   themeColor: 'black',
 };
 

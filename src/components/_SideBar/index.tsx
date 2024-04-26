@@ -1,10 +1,13 @@
-import NavItems from '@components/_NavItems';
-import { Button, Stack } from '@mantine/core';
-import buttonClass from '@style/Button.module.css';
-import { _buttonSize } from '@utils/constant';
-
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+import { Button, Stack } from '@mantine/core';
+
+import NavItems from '@components/_NavItems';
+
+import { _buttonSize } from '@utils/constant';
+
+import buttonClass from '@style/Button.module.css';
 
 const SideBar = () => {
   const pathname = usePathname();
@@ -12,18 +15,19 @@ const SideBar = () => {
   const isCurrentPageSelected = (page: string): boolean => {
     return pathname === page;
   };
+
   return (
     <Stack>
       {NavItems.map(
         (item) =>
           item.showButton && (
             <Button
-              key={item.webURL}
+              key={item.label}
+              aria-label={item.label}
               component={Link}
               href={item.webURL}
-              target={item.target ?? '_self'}
+              target={item.target}
               size={_buttonSize}
-              aria-label={item.label}
               disabled={item.isDisabled || isCurrentPageSelected(item.webURL)}
               className={
                 isCurrentPageSelected(item.webURL)

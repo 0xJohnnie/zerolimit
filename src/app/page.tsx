@@ -1,7 +1,6 @@
-import { Welcome } from '@components/Welcome';
-import { _cssTitle } from '@utils/constant';
-
 import { Metadata } from 'next';
+
+import { Welcome } from '@components/Welcome';
 
 export const metadata: Metadata = {
   alternates: {

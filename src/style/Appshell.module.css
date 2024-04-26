@@ -1,0 +1,32 @@
+.fullWidth {
+  align-content: center;
+  justify-content: flex-start;
+
+  @media (max-width: 576px) {
+    justify-content: space-between;
+  }
+}
+
+.headerFullWidth {
+  composes: fullWidth;
+  justify-content: space-between;
+}
+
+.default {
+  composes: fullWidth;
+  padding: calc(var(--app-shell-padding));
+}
+
+.headerFooterShell {
+  display: flex;
+  width: 100dvw;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--app-shell-padding) / 2) calc(var(--app-shell-padding));
+}
+
+.headerFooterContent {
+  composes: headerFooterShell;
+  padding: 0;
+  overflow: hidden;
+}

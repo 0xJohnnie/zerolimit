@@ -1,6 +1,6 @@
-import { _cssTitle } from '@utils/constant';
-
 import { Metadata } from 'next';
+
+import { _cssTitle } from '@utils/constant';
 
 export const metadata: Metadata = {
   alternates: {

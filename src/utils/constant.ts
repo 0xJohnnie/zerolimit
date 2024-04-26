@@ -1,29 +1,35 @@
-export const _forceShowFooter = false;
-
 /*  >>>>> THEME <<<<< */
 export const _defaultColorScheme = 'dark';
 export const _defaultPrimaryColor = 'violet';
-
-// Default size is sm
-export const _buttonSize = 'md';
+export const _defaultFontWeight = 400;
 
 // Default size is sm //  'xs' | 'sm' | 'md' | 'lg' | 'xl'
-export const _buttonRadius = 'md';
-
+export const _buttonSize = 'md';
+export const _buttonRadius = 'lg';
 export const _darkHoverColor = '#513391';
 
-//  Appshell
-export const _appShellHeight = 64;
+// Appshell
+export const _hideHeader = false;
+export const _hideNavBar = false;
+export const _hideFooter = false;
+
 export const _appShellPadding = 'xs';
-//  'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export const _appShellHide = 'xs';
+
+export const _appShellHeight = 60;
+export const _heightOffset = 0;
+export const _screenBreakpoint = 576;
+
 export const _navBarWidth = 250;
 
+// Logo
 export const _logoPathDark = '/icon/logo-light.png';
 export const _logoPathLight = '/icon/logo-dark.png';
+export const _logoSize = 42;
 
-//  'xs' | 'sm' | 'md' | 'lg' | 'xl'
-export const _tabBarButtonSize = 'lg';
+export const _iconSize = 32;
+
+export const _tabBarButtonSize = 'xl';
 export const _tabBarIconStroke = 1.5;
 
 export const _hrefHome = '/';

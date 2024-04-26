@@ -1,7 +1,10 @@
-import { ActionIcon, useMantineColorScheme } from '@mantine/core';
-import buttonClass from '@style/Button.module.css';
 import { IconMoon, IconSun } from '@tabler/icons-react';
+
+import { ActionIcon, useMantineColorScheme } from '@mantine/core';
+
 import { _tabBarButtonSize, _tabBarIconStroke } from '@utils/constant';
+
+import buttonClass from '@style/Button.module.css';
 
 const ColorSchemeToggle = () => {
   const { setColorScheme, colorScheme } = useMantineColorScheme();

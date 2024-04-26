@@ -1,10 +1,13 @@
-import NavItems from '@components/_NavItems';
-import { ActionIcon, Group } from '@mantine/core';
-import buttonClass from '@style/Button.module.css';
-import { _appShellPadding, _tabBarButtonSize } from '@utils/constant';
-
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+import { ActionIcon } from '@mantine/core';
+
+import NavItems from '@components/_NavItems';
+
+import { _tabBarButtonSize } from '@utils/constant';
+
+import buttonClass from '@style/Button.module.css';
 
 const TabBar = () => {
   const pathname = usePathname();
@@ -14,14 +17,15 @@ const TabBar = () => {
   };
 
   return (
-    <Group justify="space-between" gap={_appShellPadding} preventGrowOverflow>
+    <>
       {NavItems.map((item) => (
         <ActionIcon
-          key={item.webURL}
+          key={item.label}
+          aria-label={item.label}
           component={Link}
           href={item.webURL}
+          target={item.target}
           size={_tabBarButtonSize}
-          aria-label={item.label}
           disabled={item.isDisabled || isCurrentPageSelected(item.webURL)}
           className={
             isCurrentPageSelected(item.webURL)
@@ -32,7 +36,7 @@ const TabBar = () => {
           {item.icon}
         </ActionIcon>
       ))}
-    </Group>
+    </>
   );
 };
 

@@ -1,24 +1,26 @@
-import { ActionIcon, Group, Stack } from '@mantine/core';
 import { IconBrandGithub, IconBrandTwitter } from '@tabler/icons-react';
-import {
-  _appShellPadding,
-  _tabBarButtonSize,
-  _tabBarIconStroke,
-} from '@utils/constant';
-
 import Link from 'next/link';
 
-const hyperlinkItems: NavItem[] = [
-  {
+import { ActionIcon, Group, Stack } from '@mantine/core';
+
+import { _appShellPadding, _tabBarButtonSize } from '@utils/constant';
+import { createLinkItem } from '@utils/util';
+
+import { ILinkItem } from '@Interface/navItem';
+
+const hyperlinkItems: ILinkItem[] = [
+  createLinkItem({
     label: '0xJohnnie Twitter',
+    iconComponent: IconBrandTwitter,
     webURL: 'https://twitter.com/0xJohnnie',
-    icon: <IconBrandTwitter stroke={_tabBarIconStroke} />,
-  },
-  {
+    openInNewWindow: true,
+  }),
+  createLinkItem({
     label: '0xJohnnie Github',
+    iconComponent: IconBrandGithub,
     webURL: 'https://github.com/0xJohnnie',
-    icon: <IconBrandGithub stroke={_tabBarIconStroke} />,
-  },
+    openInNewWindow: true,
+  }),
 ];
 
 const HyperLink = () => (
@@ -27,11 +29,11 @@ const HyperLink = () => (
       {hyperlinkItems.map((item) => (
         <ActionIcon
           key={item.webURL}
+          aria-label={item.label}
           component={Link}
           href={item.webURL}
+          target={item.target}
           size={_tabBarButtonSize}
-          aria-label={item.label}
-          target="_blank"
           radius="xl"
         >
           {item.icon}

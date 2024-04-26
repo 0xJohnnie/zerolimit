@@ -1,4 +1,5 @@
 import { LoadingOverlay } from '@mantine/core';
+
 import { _darkHoverColor } from '@utils/constant';
 
 const LoadingScreen = () => {

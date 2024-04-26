@@ -1,6 +1,6 @@
-import AppConfig from '@utils/AppConfig';
-
 import { MetadataRoute } from 'next';
+
+import AppConfig from '@utils/AppConfig';
 
 const sitemap = (): MetadataRoute.Sitemap => {
   return [

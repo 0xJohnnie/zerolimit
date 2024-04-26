@@ -1,25 +1,25 @@
 import { IconHome, IconLayoutGrid, IconSettings } from '@tabler/icons-react';
-import { _tabBarIconStroke } from '@utils/constant';
 
-const NavItems: NavItem[] = [
-  {
+import { createLinkItem } from '@utils/util';
+
+import { ILinkItem } from '@Interface/navItem';
+
+const NavItems: ILinkItem[] = [
+  createLinkItem({
     label: 'Home',
-    webURL: `/`,
-    icon: <IconHome stroke={_tabBarIconStroke} />,
-    showButton: true,
-  },
-  {
+    iconComponent: IconHome,
+    webURL: '/',
+  }),
+  createLinkItem({
     label: 'Dappstore',
+    iconComponent: IconLayoutGrid,
     webURL: '/dappstore',
-    icon: <IconLayoutGrid stroke={_tabBarIconStroke} />,
-    showButton: true,
-  },
-  {
+  }),
+  createLinkItem({
     label: 'Settings',
-    webURL: `/settings`,
-    icon: <IconSettings stroke={_tabBarIconStroke} />,
-    showButton: true,
-  },
+    iconComponent: IconSettings,
+    webURL: '/settings',
+  }),
 ];
 
 export default NavItems;

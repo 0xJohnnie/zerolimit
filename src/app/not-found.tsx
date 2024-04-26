@@ -1,17 +1,30 @@
-import { Button, Stack } from '@mantine/core';
-import { _cssTitle } from '@utils/constant';
-
 import Link from 'next/link';
+
+import { Button, Stack, Title } from '@mantine/core';
+
+import { _buttonSize, _hrefHome, _iconSize } from '@utils/constant';
+
+import textClasses from '@style/Text.module.css';
 
 const NotFound = () => {
   return (
-    <Stack h={'100vh'} justify="center" align="center">
-      <h1 className={_cssTitle}>404 - PAGE NOT FOUND</h1>
-
-      <Link href="/">
-        <Button size="lg">Go home</Button>
-      </Link>
-    </Stack>
+    <>
+      <Stack>
+        <Title className={textClasses.title} ta="center" mt={150}>
+          404 - PAGE NOT FOUND
+        </Title>
+      </Stack>
+      <Button
+        component={Link}
+        href={_hrefHome}
+        aria-label={'Go home'}
+        size={_buttonSize}
+        my={_iconSize}
+        fullWidth
+      >
+        Go home
+      </Button>
+    </>
   );
 };
 
