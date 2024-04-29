@@ -33,10 +33,11 @@ import {
   _logo,
   _logoSize,
   _navBarWidth,
+  _showThemeToggle,
 } from '@utils/constant';
 import { useCalcWidthHeight, useIsMobileScreen } from '@utils/util';
 
-import appShellClasses from '@style/Appshell.module.css';
+import appShellClass from '@style/Appshell.module.css';
 
 const MainAppShell = ({ children }: { children: React.ReactNode }) => {
   const { colorScheme } = useMantineColorScheme();
@@ -63,10 +64,10 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
         }}
       >
         {/* +             START OF HEADER             + */}
-        <AppShell.Header className={appShellClasses.headerFooterShell}>
+        <AppShell.Header className={appShellClass.headerFooterShell}>
           <Group
             w={cWidth}
-            className={appShellClasses.headerFooterContent}
+            className={appShellClass.headerFooterContent}
             wrap="nowrap"
             preventGrowOverflow
           >
@@ -85,13 +86,13 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
                 <Title order={2}>{AppConfig.site_name}</Title>
               </Center>
             </Link>
-            <ColorSchemeToggle />
+            <Group>{_showThemeToggle && <ColorSchemeToggle />}</Group>
           </Group>
         </AppShell.Header>
         {/* +              END OF HEADER              + */}
 
         {/* +             START OF NAVBAR             + */}
-        <AppShell.Navbar className={appShellClasses.default}>
+        <AppShell.Navbar className={appShellClass.default}>
           {/* START : NAVBAR CONTENT */}
           <AppShell.Section component={ScrollArea} grow>
             <SideBar />
@@ -109,7 +110,7 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
         <AppShell.Main>
           <Center>
             <ScrollArea.Autosize type="never" h={cHeight} w={cWidth}>
-              <Stack h={cHeight} className={appShellClasses.fullWidth}>
+              <Stack h={cHeight} className={appShellClass.fullWidth}>
                 {children}
               </Stack>
             </ScrollArea.Autosize>
@@ -117,10 +118,10 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
         </AppShell.Main>
 
         {/* +              START OF FOOTER              + */}
-        <AppShell.Footer className={appShellClasses.headerFooterShell}>
+        <AppShell.Footer className={appShellClass.headerFooterShell}>
           <Group
             w={cWidth}
-            className={appShellClasses.headerFooterContent}
+            className={appShellClass.headerFooterContent}
             wrap="nowrap"
             preventGrowOverflow
           >

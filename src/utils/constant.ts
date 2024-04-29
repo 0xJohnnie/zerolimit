@@ -1,5 +1,9 @@
-export const _appVersion =
+import { getCurrentDate } from './util';
+
+export const _gitCommit =
   process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA?.slice(0, 6).trim() ?? '';
+
+export const _appVersion = `${_gitCommit} | ${getCurrentDate()}`;
 
 /*  >>>>> THEME <<<<< */
 export const _defaultColorScheme = 'dark';
@@ -11,6 +15,8 @@ export const _defaultRadius = 'md';
 export const _buttonSize = 'md';
 export const _buttonRadius = 'lg';
 export const _darkHoverColor = '#513391';
+
+export const _showThemeToggle = false;
 
 // Appshell
 export const _hideHeader = false;

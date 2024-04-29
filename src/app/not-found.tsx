@@ -4,13 +4,13 @@ import { Button, Stack, Title } from '@mantine/core';
 
 import { _buttonSize, _hrefHome, _iconSize } from '@utils/constant';
 
-import textClasses from '@style/Text.module.css';
+import textClass from '@style/Text.module.css';
 
 const NotFound = () => {
   return (
     <>
       <Stack>
-        <Title className={textClasses.title} ta="center" mt={150}>
+        <Title className={textClass.title} ta="center" mt={150}>
           404 - PAGE NOT FOUND
         </Title>
       </Stack>

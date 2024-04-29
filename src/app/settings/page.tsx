@@ -4,7 +4,7 @@ import { Stack, Text } from '@mantine/core';
 
 import InstallPWA from '@components/Pwa';
 
-import { _appVersion, _cssTitle } from '@utils/constant';
+import { _appVersion, _cssTitle, _iconHalfSize } from '@utils/constant';
 
 import appShellClasses from '@style/Appshell.module.css';
 
@@ -25,7 +25,7 @@ const Settings = () => {
 
         <Stack>
           <InstallPWA />
-          <Text ta="center" size="sm" c="dimmed">
+          <Text ta="center" size="sm" c="dimmed" my={_iconHalfSize}>
             App version : {_appVersion}
           </Text>
         </Stack>

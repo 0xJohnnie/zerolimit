@@ -1,12 +1,12 @@
 import { Stack, Title } from '@mantine/core';
 
-import textClasses from '@style/Text.module.css';
+import textClass from '@style/Text.module.css';
 
 const Offline = () => {
   return (
     <>
       <Stack>
-        <Title className={textClasses.title} ta="center" mt={150}>
+        <Title className={textClass.title} ta="center" mt={150}>
           You&apos;re offline
           <br />
           <br />

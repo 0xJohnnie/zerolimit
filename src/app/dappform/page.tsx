@@ -1,12 +1,11 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 
 import { Box, Stack, Title } from '@mantine/core';
 
-import DappInputForm from '@components/DappInputForm';
-
 import { _cssTitle } from '@utils/constant';
 
-import appShellClasses from '@style/Appshell.module.css';
+import appShellClass from '@style/Appshell.module.css';
 
 export const metadata: Metadata = {
   alternates: {
@@ -17,10 +16,12 @@ export const metadata: Metadata = {
   },
 };
 
+const DappInputForm = dynamic(() => import('@components/DappInputForm'));
+
 const DappForm = () => {
   return (
     <>
-      <Stack className={appShellClasses.fullWidth}>
+      <Stack className={appShellClass.fullWidth}>
         <Box>
           <Title className={_cssTitle}>Dapp Form</Title>
           <Title order={6}>Add new Dapps to the Dapp Store</Title>

@@ -8,12 +8,12 @@ import { Button, Text, Title } from '@mantine/core';
 import { _hrefDappstore, _iconHalfSize } from '@utils/constant';
 
 import buttonClass from '@style/Button.module.css';
-import textClasses from '@style/Text.module.css';
+import textClass from '@style/Text.module.css';
 
 export function Welcome() {
   return (
     <>
-      <Title className={textClasses.title} ta="center" m={50}>
+      <Title className={textClass.title} ta="center" m={50}>
         Welcome to{' '}
         <Text
           inherit
