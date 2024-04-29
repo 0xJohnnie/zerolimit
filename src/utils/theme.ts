@@ -8,6 +8,7 @@ import {
   _buttonRadius,
   _defaultFontWeight,
   _defaultPrimaryColor,
+  _defaultRadius,
 } from './constant';
 
 export const theme = createTheme({
@@ -28,6 +29,7 @@ export const theme = createTheme({
     Button: Button.extend({
       defaultProps: {
         style: { fontWeight: _defaultFontWeight },
+        radius: _buttonRadius,
       },
     }),
 
@@ -43,6 +45,6 @@ export const theme = createTheme({
   luminanceThreshold: 0.5,
   autoContrast: true,
   cursorType: 'pointer',
-  defaultRadius: _buttonRadius,
+  defaultRadius: _defaultRadius,
   activeClassName: buttonClass.buttonDefault,
 });

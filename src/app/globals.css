@@ -12,6 +12,9 @@
   --hover-color-primary: #513391;
   --hover-color-secondary: #5d3ba4;
 
+  --mantine-color-dark-2: var(--light-color-secondary);
+  --mantine-color-gray-6: var(--dark-color-secondary);
+
   @mixin light-root {
     --mantine-color-body: var(--light-color-primary);
   }

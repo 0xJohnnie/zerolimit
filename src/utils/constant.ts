@@ -5,6 +5,7 @@ export const _appVersion =
 export const _defaultColorScheme = 'dark';
 export const _defaultPrimaryColor = 'violet';
 export const _defaultFontWeight = 400;
+export const _defaultRadius = 'md';
 
 // Default size is sm //  'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export const _buttonSize = 'md';

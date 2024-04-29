@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic';
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
+import { Notifications } from '@mantine/notifications';
+import '@mantine/notifications/styles.css';
 
 import AppConfig from '@utils/AppConfig';
 import { _defaultColorScheme, _logo, _logoApple } from '@utils/constant';
@@ -66,6 +68,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </head>
       <body>
         <MantineProvider theme={theme} defaultColorScheme={_defaultColorScheme}>
+          <Notifications position="top-right" />
           <MainAppShell>{children}</MainAppShell>
         </MantineProvider>
       </body>
