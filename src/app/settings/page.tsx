@@ -6,6 +6,8 @@ import InstallPWA from '@components/Pwa';
 
 import { _appVersion, _cssTitle } from '@utils/constant';
 
+import appShellClasses from '@style/Appshell.module.css';
+
 export const metadata: Metadata = {
   alternates: {
     canonical: '/settings',
@@ -18,13 +20,15 @@ export const metadata: Metadata = {
 const Settings = () => {
   return (
     <>
-      <h1 className={_cssTitle}>Settings</h1>
+      <Stack className={appShellClasses.headerFullWidth}>
+        <h1 className={_cssTitle}>Settings</h1>
 
-      <Stack>
-        <InstallPWA />
-        <Text ta="center" size="sm" c="dimmed">
-          App version : {_appVersion}
-        </Text>
+        <Stack>
+          <InstallPWA />
+          <Text ta="center" size="sm" c="dimmed">
+            App version : {_appVersion}
+          </Text>
+        </Stack>
       </Stack>
     </>
   );

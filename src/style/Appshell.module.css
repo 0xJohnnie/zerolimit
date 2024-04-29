@@ -1,6 +1,7 @@
 .fullWidth {
   align-content: center;
   justify-content: flex-start;
+  height: 100%;
 
   @media (max-width: 576px) {
     justify-content: space-between;

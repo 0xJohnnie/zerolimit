@@ -5,8 +5,6 @@ import { Button, Stack } from '@mantine/core';
 
 import NavItems from '@components/_NavItems';
 
-import { _buttonSize } from '@utils/constant';
-
 import buttonClass from '@style/Button.module.css';
 
 const SideBar = () => {
@@ -27,8 +25,6 @@ const SideBar = () => {
               component={Link}
               href={item.webURL}
               target={item.target}
-              size={_buttonSize}
-              disabled={item.isDisabled || isCurrentPageSelected(item.webURL)}
               className={
                 isCurrentPageSelected(item.webURL)
                   ? buttonClass.buttonSelected

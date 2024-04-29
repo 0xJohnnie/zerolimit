@@ -1,9 +1,14 @@
+import dayjs from 'dayjs';
+import timezone from 'dayjs/plugin/timezone';
+import utc from 'dayjs/plugin/utc';
+
 import { useViewportSize } from '@mantine/hooks';
 
 import { ILinkItem, ILinkItemOptions } from '@Interface/navItem';
 
 import {
-  _appShellHeight,
+  _appShellFooterHeight,
+  _appShellHeaderHeight,
   _heightOffset,
   _hideFooter,
   _hideHeader,
@@ -12,11 +17,15 @@ import {
   _tabBarIconStroke,
 } from './constant';
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 export const useCalcWidthHeight = () => {
   const isMobileScreen = useIsMobileScreen();
 
-  const headerOffset = _hideHeader ? 0 : _appShellHeight;
-  const footerOffset = _hideFooter || isMobileScreen ? 0 : _appShellHeight;
+  const headerOffset = _hideHeader ? 0 : _appShellHeaderHeight;
+  const footerOffset =
+    _hideFooter || isMobileScreen ? 0 : _appShellFooterHeight;
 
   const heightOffset = _heightOffset + headerOffset + footerOffset;
 
@@ -60,4 +69,11 @@ export const getPWADisplayMode = () => {
     return 'standalone';
   }
   return 'browser';
+};
+
+export const getCurrentDate = () => {
+  return dayjs
+    .tz(dayjs(), process.env.NEXT_PUBLIC_TIME_ZONE)
+    .format('YYYY-MM-DD @ HH:mm:ss')
+    .toString();
 };

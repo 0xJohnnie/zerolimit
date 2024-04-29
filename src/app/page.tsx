@@ -12,6 +12,10 @@ export const metadata: Metadata = {
 };
 
 const Home = () => {
-  return <Welcome />;
+  return (
+    <>
+      <Welcome />
+    </>
+  );
 };
 export default Home;

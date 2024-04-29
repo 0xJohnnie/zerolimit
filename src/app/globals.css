@@ -4,13 +4,13 @@
 
 :root {
   --dark-color-primary: #0b0b0b;
-  --dark-color-secondary: #404040;
+  --dark-color-secondary: #333333;
 
   --light-color-primary: #fefefe;
   --light-color-secondary: #d5d7e0;
 
   --hover-color-primary: #513391;
-  --hover-color-secondary: #9b74f0;
+  --hover-color-secondary: #5d3ba4;
 
   @mixin light-root {
     --mantine-color-body: var(--light-color-primary);

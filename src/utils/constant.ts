@@ -16,10 +16,11 @@ export const _hideHeader = false;
 export const _hideNavBar = false;
 export const _hideFooter = false;
 
-export const _appShellPadding = 'xs';
+export const _appShellPadding = 'sm';
 export const _appShellHide = 'xs';
 
-export const _appShellHeight = 60;
+export const _appShellHeaderHeight = 60;
+export const _appShellFooterHeight = 72;
 export const _heightOffset = 0;
 export const _screenBreakpoint = 576;
 
@@ -32,6 +33,7 @@ export const _logoApple = '/icon/apple-touch-icon.png';
 
 // Icon
 export const _iconSize = 32;
+export const _iconHalfSize = _iconSize / 2;
 
 export const _tabBarButtonSize = 'xl';
 export const _tabBarIconStroke = 1.5;

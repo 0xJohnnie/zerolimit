@@ -26,7 +26,6 @@ const TabBar = () => {
           href={item.webURL}
           target={item.target}
           size={_tabBarButtonSize}
-          disabled={item.isDisabled || isCurrentPageSelected(item.webURL)}
           className={
             isCurrentPageSelected(item.webURL)
               ? buttonClass.buttonSelected

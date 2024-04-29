@@ -15,6 +15,13 @@
 }
 
 .buttonSelected {
-  background-color: var(--hover-color-primary);
+  background-color: light-dark(
+    var(--hover-color-primary),
+    var(--hover-color-primary)
+  );
   color: var(--light-color-primary);
+
+  @mixin hover {
+    background-color: var(--hover-color-secondary);
+  }
 }

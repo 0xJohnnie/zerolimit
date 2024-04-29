@@ -1,21 +1,12 @@
-import dayjs from 'dayjs';
-import timezone from 'dayjs/plugin/timezone';
-import utc from 'dayjs/plugin/utc';
-
 import { _appVersion } from './constant';
-
-dayjs.extend(utc);
-dayjs.extend(timezone);
+import { getCurrentDate } from './util';
 
 const site =
   process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_VERCEL_URL
     ? process.env.NEXT_PUBLIC_VERCEL_URL
     : 'http://localhost:3000';
 
-const version = `${dayjs
-  .tz(dayjs(), process.env.NEXT_PUBLIC_TIME_ZONE)
-  .format('YYYY-MM-DD @ HH:mm:ss')
-  .toString()} | ${_appVersion}`;
+const version = `${getCurrentDate()} | ${_appVersion}`;
 
 const AppConfig = {
   site_name: 'Zerolimit',

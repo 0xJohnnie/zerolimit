@@ -22,7 +22,8 @@ import LoadingScreen from '@components/LoadingScreen';
 
 import AppConfig from '@utils/AppConfig';
 import {
-  _appShellHeight,
+  _appShellFooterHeight,
+  _appShellHeaderHeight,
   _appShellHide,
   _appShellPadding,
   _hideFooter,
@@ -50,14 +51,14 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
     <>
       <AppShell
         padding={_appShellPadding}
-        header={{ height: _appShellHeight, collapsed: _hideHeader }}
+        header={{ height: _appShellHeaderHeight, collapsed: _hideHeader }}
         navbar={{
           width: _navBarWidth,
           breakpoint: _appShellHide,
           collapsed: { mobile: true, desktop: _hideNavBar },
         }}
         footer={{
-          height: _appShellHeight,
+          height: _appShellFooterHeight,
           collapsed: _hideFooter || isMobileScreen,
         }}
       >
@@ -107,7 +108,7 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
 
         <AppShell.Main>
           <Center>
-            <ScrollArea.Autosize type="always" h={cHeight} w={cWidth}>
+            <ScrollArea.Autosize type="never" h={cHeight} w={cWidth}>
               <Stack h={cHeight} className={appShellClasses.fullWidth}>
                 {children}
               </Stack>
