@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, createTheme, rem } from '@mantine/core';
+import { Button, createTheme, Divider, rem } from '@mantine/core';
 
 import buttonClass from '@style/Button.module.css';
 
@@ -28,6 +28,12 @@ export const theme = createTheme({
     Button: Button.extend({
       defaultProps: {
         style: { fontWeight: _defaultFontWeight },
+      },
+    }),
+
+    Divider: Divider.extend({
+      defaultProps: {
+        style: { margin: 'var(--mantine-spacing-lg)' },
       },
     }),
   },

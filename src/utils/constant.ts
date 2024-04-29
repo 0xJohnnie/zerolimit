@@ -43,3 +43,26 @@ export const _hrefDappstore = '/dappstore';
 export const _hrefSettings = '/settings';
 
 export const _cssTitle = 'text-3xl font-bold';
+
+export const _dappCategory = [
+  'All',
+  'Analytics',
+  'Dex',
+  'Depin',
+  'Exchange',
+  'Gambling',
+  'Gaming',
+  'Infrastructure',
+  'NFT',
+  'NFT Marketplace',
+  'Social',
+  'Wallet',
+  'Others',
+].sort((a, b) => {
+  // 'All' will always be on top and 'Others' will always be at the bottom
+  if (a === 'All') return -1;
+  if (b === 'All') return 1;
+  if (a === 'Others') return 1;
+  if (b === 'Others') return -1;
+  return a.localeCompare(b);
+});

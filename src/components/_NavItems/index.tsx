@@ -1,4 +1,9 @@
-import { IconHome, IconLayoutGrid, IconSettings } from '@tabler/icons-react';
+import {
+  IconHome,
+  IconLayoutGrid,
+  IconLayoutGridAdd,
+  IconSettings,
+} from '@tabler/icons-react';
 
 import { createLinkItem } from '@utils/util';
 
@@ -11,7 +16,12 @@ const NavItems: ILinkItem[] = [
     webURL: '/',
   }),
   createLinkItem({
-    label: 'Dappstore',
+    label: 'Dapp Form',
+    iconComponent: IconLayoutGridAdd,
+    webURL: '/dappform',
+  }),
+  createLinkItem({
+    label: 'Dapp Store',
     iconComponent: IconLayoutGrid,
     webURL: '/dappstore',
   }),
