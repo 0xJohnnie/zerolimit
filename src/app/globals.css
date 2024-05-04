@@ -23,6 +23,31 @@
   }
 }
 
+.mantine-TextInput-input {
+  @mixin light {
+    background-color: var(--light-color-primary);
+  }
+
+  @mixin dark {
+    background-color: var(--dark-color-primary);
+    color: var(--light-color-primary);
+  }
+}
+
+.mantine-Select-input,
+.mantine-DatePickerInput-input,
+.mantine-Fieldset-root,
+.mantine-TextInput-input {
+  @mixin light {
+    background-color: var(--light-color-primary);
+  }
+
+  @mixin dark {
+    background-color: var(--dark-color-primary);
+    color: var(--light-color-primary);
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

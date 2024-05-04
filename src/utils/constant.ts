@@ -1,9 +1,9 @@
-import { getCurrentDate } from './util';
+import { getCurrentDateWithTime } from './util';
 
 export const _gitCommit =
   process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA?.slice(0, 6).trim() ?? '';
 
-export const _appVersion = `${_gitCommit} | ${getCurrentDate()}`;
+export const _appVersion = `${_gitCommit} | ${getCurrentDateWithTime(true)}`;
 
 /*  >>>>> THEME <<<<< */
 export const _defaultColorScheme = 'dark';
@@ -41,15 +41,18 @@ export const _logoApple = '/icon/apple-touch-icon.png';
 // Icon
 export const _iconSize = 32;
 export const _iconHalfSize = _iconSize / 2;
+export const _iconStroke = 1.5;
 
 export const _tabBarButtonSize = 'xl';
-export const _tabBarIconStroke = 1.5;
 
 export const _hrefHome = '/';
 export const _hrefDappstore = '/dappstore';
 export const _hrefSettings = '/settings';
 
 export const _cssTitle = 'text-3xl font-bold';
+
+// Form Names
+export const _dappForm = 'dappForm';
 
 export const _dappCategory = [
   'All',

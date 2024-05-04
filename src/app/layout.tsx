@@ -68,7 +68,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </head>
       <body>
         <MantineProvider theme={theme} defaultColorScheme={_defaultColorScheme}>
-          <Notifications position="top-right" />
+          <Notifications position="top-right" style={{ marginTop: 48 }} />
           <MainAppShell>{children}</MainAppShell>
         </MantineProvider>
       </body>

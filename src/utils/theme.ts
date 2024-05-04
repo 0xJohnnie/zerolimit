@@ -14,8 +14,8 @@ import {
 export const theme = createTheme({
   scale: 1,
   fontSizes: {
-    xs: rem(12), // 10
-    sm: rem(14), // 11
+    xs: rem(14), // 10
+    sm: rem(16), // 11
     md: rem(18), // 14
     lg: rem(24), // 16
     xl: rem(36), // 20

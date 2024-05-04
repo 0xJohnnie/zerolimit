@@ -1,6 +1,8 @@
-import { _cssTitle } from '@utils/constant';
-
 import { Metadata } from 'next';
+
+import { Title } from '@mantine/core';
+
+import { _cssTitle } from '@utils/constant';
 
 export const metadata: Metadata = {
   alternates: {
@@ -11,7 +13,11 @@ export const metadata: Metadata = {
   },
 };
 const DappStore = () => {
-  return <h1 className={_cssTitle}>Dappstore</h1>;
+  return (
+    <>
+      <Title className={_cssTitle}>Dapp Store</Title>
+    </>
+  );
 };
 
 export default DappStore;
