@@ -2,12 +2,10 @@ import { FC } from 'react';
 
 import { Button, Modal, SimpleGrid } from '@mantine/core';
 
-import { _iconSize } from '@utils/constant';
+import { _iconSize, DATA_SAVING_DELAY } from '@utils/constant';
 import { saveToLocalStorage } from '@utils/util';
 
 import { DataOverwriteModalProps } from '@Interface/form';
-
-const NOTIFICATION_DELAY = 1500;
 
 const DataOverwriteModal: FC<DataOverwriteModalProps> = ({
   dataOverwriteState,
@@ -32,7 +30,7 @@ const DataOverwriteModal: FC<DataOverwriteModalProps> = ({
         showHideNotification(false);
         stopSavingData();
         form.reset();
-      }, NOTIFICATION_DELAY);
+      }, DATA_SAVING_DELAY);
     }
     closeDataOverwrite();
   };

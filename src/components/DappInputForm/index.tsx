@@ -26,7 +26,13 @@ import { useForm } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
 import { notifications } from '@mantine/notifications';
 
-import { _dappCategory, _dappForm, _iconStroke } from '@utils/constant';
+import {
+  _dappCategory,
+  _dappForm,
+  _iconStroke,
+  DATA_SAVING_DELAY,
+  NOTIFICATION_CLOSE_DELAY,
+} from '@utils/constant';
 import {
   getFromLocalStorage,
   isKeyInLocalStorage,
@@ -48,12 +54,10 @@ import {
 } from './FormConstant';
 import ResetFormModal from './ResetFormModal';
 
-const NOTIFICATION_DELAY = 1500;
-
 const notificationProps: NotificationShowHideProps = {
   id: 'savingData',
   title: 'Dapp Form',
-  autoCloseDuration: NOTIFICATION_DELAY,
+  autoCloseDuration: NOTIFICATION_CLOSE_DELAY,
   trueMessage: 'Saving Dapp Form...',
   falseMessage: 'Dapp Form saved',
 };
@@ -142,7 +146,7 @@ const DappInputForm = () => {
           showHideNotification(false);
           stopSavingData();
           form.reset();
-        }, NOTIFICATION_DELAY);
+        }, DATA_SAVING_DELAY);
       }
     },
     [form, openDataOverwrite, startSavingData, stopSavingData, storedValues],

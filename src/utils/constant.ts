@@ -51,6 +51,10 @@ export const _hrefSettings = '/settings';
 
 export const _cssTitle = 'text-3xl font-bold';
 
+// Delay
+export const NOTIFICATION_CLOSE_DELAY = 1500;
+export const DATA_SAVING_DELAY = 1000;
+
 // Form Names
 export const _dappForm = 'dappForm';
 
