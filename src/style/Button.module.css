@@ -7,10 +7,7 @@
 
   @mixin hover {
     background-color: var(--hover-color-primary);
-  }
-
-  &:active {
-    transform: scale(0.95);
+    box-shadow: 0 0 16px 2px #fff;
   }
 }
 
@@ -23,5 +20,15 @@
 
   @mixin hover {
     background-color: var(--hover-color-secondary);
+  }
+}
+
+.socialButtonDefault {
+  @mixin hover {
+    transform: scale(0.95);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+    box-shadow: 0 0 16px 2px #fff;
   }
 }

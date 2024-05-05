@@ -24,7 +24,9 @@ const DappForm = () => {
       <Stack className={appShellClass.fullWidth}>
         <Box>
           <Title className={_cssTitle}>Dapp Form</Title>
-          <Title order={6}>Add new Dapps to the Dapp Store</Title>
+          <Title order={6} mt={8}>
+            Add new Dapps to the Dapp Store
+          </Title>
         </Box>
         <DappInputForm />
       </Stack>

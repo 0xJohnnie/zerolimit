@@ -103,7 +103,7 @@ const DappInputForm = () => {
     validate: validateForm,
     validateInputOnChange: true,
     // Need this here or else the validateInputOnChange will not work
-    onValuesChange: () => {},
+    onValuesChange: (values) => {},
 
     transformValues: (values) => ({
       ...values,
@@ -112,11 +112,13 @@ const DappInputForm = () => {
       category: values.category,
       logo: values.logo.trim().replace(/\/+$/, ''),
       website: values.website.trim().replace(/\/+$/, ''),
-      twitter: values.twitter.trim(),
-      discord: values.discord.trim(),
-      telegram: values.telegram.trim(),
-      youtube: values.youtube.trim(),
-      github: values.github.trim(),
+      dappSocial: {
+        twitter: values.dappSocial.twitter.trim(),
+        discord: values.dappSocial.discord.trim(),
+        telegram: values.dappSocial.telegram.trim(),
+        youtube: values.dappSocial.youtube.trim(),
+        github: values.dappSocial.github.trim(),
+      },
     }),
   });
 

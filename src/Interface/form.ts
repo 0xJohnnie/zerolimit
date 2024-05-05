@@ -1,11 +1,6 @@
 import { UseFormReturnType } from '@mantine/form';
 
-export interface DappForm {
-  dateAdded: Date | number;
-  dappName: string;
-  category: string;
-  logo: string;
-  website: string;
+export interface DappSocial {
   twitter: string;
   discord: string;
   telegram: string;
@@ -13,11 +8,21 @@ export interface DappForm {
   github: string;
 }
 
+export interface DappForm {
+  dateAdded: Date | number;
+  dappName: string;
+  category: string;
+  logo: string;
+  website: string;
+  dappSocial: DappSocial;
+}
+
 export interface FormInputItem {
+  key: string;
+  name: string;
   label: string;
   placeholder: string;
   icon: React.ReactNode;
-  key: string;
   required?: boolean;
 }
 

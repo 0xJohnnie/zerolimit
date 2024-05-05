@@ -4,7 +4,7 @@ import {
   IconBrandTelegram,
   IconBrandX,
   IconBrandYoutube,
-  IconLink,
+  IconWorld,
 } from '@tabler/icons-react';
 
 import { TextInput } from '@mantine/core';
@@ -20,51 +20,59 @@ export const initialValues: DappForm = {
   category: '',
   logo: '',
   website: '',
-  twitter: '',
-  discord: '',
-  telegram: '',
-  youtube: '',
-  github: '',
+  dappSocial: {
+    twitter: '',
+    discord: '',
+    telegram: '',
+    youtube: '',
+    github: '',
+  },
 };
 
 export const inputFields: FormInputItem[] = [
   {
-    label: 'Website',
-    placeholder: 'Enter Website URL',
-    icon: <IconLink stroke={_iconStroke} />,
     key: 'website',
+    name: 'Website',
+    label: 'Website',
+    placeholder: 'e.g. https://www.zerolimit.app',
+    icon: <IconWorld stroke={_iconStroke} />,
     required: true,
   },
   {
+    key: 'dappSocial.twitter',
+    name: 'Twitter',
     label: 'Twitter Username',
     placeholder: 'e.g. 0xJohnnie',
     icon: <IconBrandX stroke={_iconStroke} />,
-    key: 'twitter',
     required: true,
   },
   {
-    label: 'Discord Username',
-    placeholder: 'e.g. 0xJohnnie',
+    key: 'dappSocial.discord',
+    name: 'Discord',
+    label: 'Discord Server invite code',
+    placeholder: 'e.g. aUm9R0zm',
     icon: <IconBrandDiscord stroke={_iconStroke} />,
-    key: 'discord',
   },
   {
+    key: 'dappSocial.telegram',
+    name: 'Telegram',
     label: 'Telegram Username',
     placeholder: 'e.g. Johnnie',
     icon: <IconBrandTelegram stroke={_iconStroke} />,
-    key: 'telegram',
   },
   {
+    key: 'dappSocial.youtube',
+    name: 'Youtube',
     label: 'Youtube Username',
     placeholder: 'e.g. 0xJohnnie',
     icon: <IconBrandYoutube stroke={_iconStroke} />,
-    key: 'youtube',
   },
   {
+    key: 'dappSocial.github',
+    name: 'Github',
     label: 'Github Username',
     placeholder: 'e.g. 0xJohnnie',
     icon: <IconBrandGithub stroke={_iconStroke} />,
-    key: 'github',
   },
 ];
 
@@ -116,7 +124,6 @@ export const validateForm = {
       return null;
     }
   },
-
   website: (value: string) => {
     if (!value.trim()) {
       return 'Required';
@@ -129,97 +136,102 @@ export const validateForm = {
     }
     return null;
   },
-
-  twitter: (value: string) => {
-    if (!value.trim()) {
-      return 'Required';
-    }
-    if (/\s/.test(value)) {
-      return 'No spaces allowed';
-    }
-    if (!/^[A-Za-z0-9_]*$/.test(value)) {
-      return 'Should only contain letters, numbers and underscores';
-    }
-    const validateLengthBetween = lengthBetween(4, 15)(value);
-    if (validateLengthBetween) return validateLengthBetween;
-
-    return null;
-  },
-
-  discord: (value: string) => {
-    if (value.trim().length === 0) {
-      return null;
-    } else {
+  dappSocial: {
+    twitter: (value: string) => {
+      if (!value.trim()) {
+        return 'Required';
+      }
       if (/\s/.test(value)) {
         return 'No spaces allowed';
-      }
-      if (!/^[A-Za-z0-9_.]*$/.test(value)) {
-        return 'Should only contain letters, numbers, underscores and periods';
-      }
-      if (/(\.{2,})/.test(value)) {
-        return 'Cannot contain 2 consecutive periods';
-      }
-      const validateLengthBetween = lengthBetween(2, 32)(value);
-      if (validateLengthBetween) return validateLengthBetween;
-    }
-    return null;
-  },
-
-  telegram: (value: string) => {
-    if (value.trim().length === 0) {
-      return null;
-    } else {
-      if (/\s/.test(value)) {
-        return 'No spaces allowed';
-      }
-      if (!/^[A-Za-z]/.test(value)) {
-        return 'Should start with a letter';
       }
       if (!/^[A-Za-z0-9_]*$/.test(value)) {
         return 'Should only contain letters, numbers and underscores';
       }
-      const validateLengthBetween = lengthBetween(5, 32)(value);
+      if (!/^.{1,25}$/.test(value)) {
+        return 'Should be less than 25 characters long';
+      }
+      // This is for Discord Username
+      /*       const validateLengthBetween = lengthBetween(4, 15)(value);
       if (validateLengthBetween) return validateLengthBetween;
-    }
-    return null;
-  },
-
-  youtube: (value: string) => {
-    if (value.trim().length === 0) {
+      */
       return null;
-    } else {
-      if (/\s/.test(value)) {
-        return 'No spaces allowed';
-      }
-      if (!/^[A-Za-z0-9_-]/.test(value)) {
-        return 'Should start with a letter, number, underscore or hyphen';
-      }
-      if (!/^[A-Za-z0-9_.-]*$/.test(value)) {
-        return 'Should only contain letters, numbers, underscores, periods and hyphen';
-      }
-      const validateLengthBetween = lengthBetween(4, 15)(value);
-      if (validateLengthBetween) return validateLengthBetween;
-    }
-    return null;
-  },
+    },
 
-  github: (value: string) => {
-    if (value.trim().length === 0) {
+    discord: (value: string) => {
+      if (value.trim().length === 0) {
+        return null;
+      } else {
+        if (/\s/.test(value)) {
+          return 'No spaces allowed';
+        }
+        if (!/^[A-Za-z0-9_.]*$/.test(value)) {
+          return 'Should only contain letters, numbers, underscores and periods';
+        }
+        if (/(\.{2,})/.test(value)) {
+          return 'Cannot contain 2 consecutive periods';
+        }
+        const validateLengthBetween = lengthBetween(2, 32)(value);
+        if (validateLengthBetween) return validateLengthBetween;
+      }
       return null;
-    } else {
-      if (/\s/.test(value)) {
-        return 'No spaces allowed';
-      }
-      if (!/^[A-Za-z0-9](.*[A-Za-z0-9])?$/.test(value)) {
-        return 'Should start with a letter or number and cannot begin or end with a hyphen';
-      }
+    },
 
-      if (!/^[A-Za-z0-9]+([-]?[A-Za-z0-9]+)*$/i.test(value)) {
-        return 'Should only contain letters, numbers or single hyphen';
+    telegram: (value: string) => {
+      if (value.trim().length === 0) {
+        return null;
+      } else {
+        if (/\s/.test(value)) {
+          return 'No spaces allowed';
+        }
+        if (!/^[A-Za-z]/.test(value)) {
+          return 'Should start with a letter';
+        }
+        if (!/^[A-Za-z0-9_]*$/.test(value)) {
+          return 'Should only contain letters, numbers and underscores';
+        }
+        const validateLengthBetween = lengthBetween(5, 32)(value);
+        if (validateLengthBetween) return validateLengthBetween;
       }
-      const validateLengthBetween = lengthBetween(5, 39)(value);
-      if (validateLengthBetween) return validateLengthBetween;
-    }
-    return null;
+      return null;
+    },
+
+    youtube: (value: string) => {
+      if (value.trim().length === 0) {
+        return null;
+      } else {
+        if (/\s/.test(value)) {
+          return 'No spaces allowed';
+        }
+        if (!/^[A-Za-z0-9_-]/.test(value)) {
+          return 'Should start with a letter, number, underscore or hyphen';
+        }
+        if (!/^[A-Za-z0-9_.-]*$/.test(value)) {
+          return 'Should only contain letters, numbers, underscores, periods and hyphen';
+        }
+        const validateLengthBetween = lengthBetween(4, 15)(value);
+        if (validateLengthBetween) return validateLengthBetween;
+      }
+      return null;
+    },
+
+    github: (value: string) => {
+      if (value.trim().length === 0) {
+        return null;
+      } else {
+        if (/\s/.test(value)) {
+          return 'No spaces allowed';
+        }
+        if (!/^[A-Za-z0-9](.*[A-Za-z0-9])?$/.test(value)) {
+          return 'Should start with a letter or number and cannot begin or end with a hyphen';
+        }
+
+        if (!/^[A-Za-z0-9]+([-]?[A-Za-z0-9]+)*$/i.test(value)) {
+          return 'Should only contain letters, numbers or single hyphen';
+        }
+        const validateLengthBetween = lengthBetween(5, 39)(value);
+        if (validateLengthBetween) return validateLengthBetween;
+      }
+      return null;
+    },
   },
 };

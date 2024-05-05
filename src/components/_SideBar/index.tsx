@@ -17,7 +17,7 @@ const SideBar = () => {
   };
 
   return (
-    <Stack>
+    <Stack p={16}>
       {NavItems.map(
         (item) =>
           item.showButton && (
