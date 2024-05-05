@@ -1,10 +1,20 @@
 'use client';
 
 import {
+  IconBrandAppleArcade,
+  IconCalendar,
+  IconCategory2,
+  IconCheck,
+  IconPhoto,
+} from '@tabler/icons-react';
+import { useCallback, useState } from 'react';
+
+import {
   Box,
   Button,
   Divider,
-  Modal,
+  Fieldset,
+  rem,
   Select,
   SimpleGrid,
   Stack,
@@ -14,219 +24,212 @@ import { DatePickerInput } from '@mantine/dates';
 import '@mantine/dates/styles.css';
 import { useForm } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
+import { notifications } from '@mantine/notifications';
 
-import { _dappCategory, _iconHalfSize, _iconSize } from '@utils/constant';
+import { _dappCategory, _dappForm, _iconStroke } from '@utils/constant';
+import {
+  getFromLocalStorage,
+  isKeyInLocalStorage,
+  saveToLocalStorage,
+  toUnixTime,
+} from '@utils/util';
+
+import { DappForm, NotificationShowHideProps } from '@Interface/form';
 
 import appShellClass from '@style/Appshell.module.css';
 import buttonClass from '@style/Button.module.css';
 
-const initialValues = {
-  dapp: [
-    {
-      dateAdded: new Date(),
-      name: '',
-      category: '',
-      logo: '',
-      website: '',
-      twitter: '',
-      discord: '',
-      telegram: '',
-      youtube: '',
-      github: '',
-    },
-  ],
+import DataOverwriteModal from './DataOverwriteModal';
+import {
+  generateTextInput,
+  initialValues,
+  inputFields,
+  validateForm,
+} from './FormConstant';
+import ResetFormModal from './ResetFormModal';
+
+const NOTIFICATION_DELAY = 1500;
+
+const notificationProps: NotificationShowHideProps = {
+  id: 'savingData',
+  title: 'Dapp Form',
+  autoCloseDuration: NOTIFICATION_DELAY,
+  trueMessage: 'Saving Dapp Form...',
+  falseMessage: 'Dapp Form saved',
 };
 
-const validate = {
-  dapp: {
-    name: (value: string) => (!value ? 'Name is required' : null),
-    category: (value: any) => (!value ? 'Category is required' : null),
-    website: (value: string) =>
-      !value
-        ? 'Website is required'
-        : !/^https?:\/\/[^/]+/.test(value)
-          ? 'Invalid Website URL'
-          : null,
-    twitter: (value: string) =>
-      !value
-        ? 'Twitter is required'
-        : !/^https?:\/\/[^/]+/.test(value)
-          ? 'Invalid Twitter URL'
-          : null,
-  },
-};
+const showHideNotification = (showHide: boolean) => {
+  const { id, title, autoCloseDuration, trueMessage, falseMessage } =
+    notificationProps;
 
-const handleFormSubmit = (values: any, form: any) => {
-  const storedValue = window.localStorage.getItem('dapp-form');
-
-  let storedValues: { dapp?: { [key: string]: any } } = {};
-
-  if (storedValue) {
-    storedValues = JSON.parse(storedValue);
-  }
-  // Check if the name is unique
-  if (storedValues.dapp && storedValues.dapp[values.dapp[0].name]) {
-    const overwrite = window.confirm(
-      'Dapp name already exists. Do you want to overwrite it?',
-    );
-    if (!overwrite) {
-      return;
-    }
-  }
-
-  // Merge the current form values with the stored values
-  const mergedValues = {
-    ...storedValues,
-    dapp: {
-      ...storedValues.dapp,
-      [values.dapp[0].name]: values.dapp[0],
-    },
+  const props = {
+    id,
+    title,
+    loading: showHide,
+    autoClose: showHide ? false : autoCloseDuration,
+    withCloseButton: false,
+    ...(showHide
+      ? { message: trueMessage }
+      : {
+          message: falseMessage,
+          color: 'teal',
+          icon: <IconCheck style={{ width: rem(18), height: rem(18) }} />,
+        }),
   };
-
-  // Store the merged values in local storage
-  window.localStorage.setItem('dapp-form', JSON.stringify(mergedValues));
-
-  form.reset();
+  return showHide ? notifications.show(props) : notifications.update(props);
 };
 
 const DappInputForm = () => {
-  const [opened, { close, open }] = useDisclosure(false);
+  const [resetFormState, { close: closeResetForm, open: openResetForm }] =
+    useDisclosure(false);
+
+  const [
+    dataOverwriteState,
+    { close: closeDataOverwrite, open: openDataOverwrite },
+  ] = useDisclosure(false);
+
+  const [savingDataState, { close: stopSavingData, open: startSavingData }] =
+    useDisclosure();
+
+  const [mergedFormData, setMergedFormData] = useState<DappForm>(initialValues);
 
   const form = useForm({
     mode: 'uncontrolled',
     initialValues,
-    validate,
+    validate: validateForm,
+    validateInputOnChange: true,
+    // Need this here or else the validateInputOnChange will not work
+    onValuesChange: () => {},
+
+    transformValues: (values) => ({
+      ...values,
+      dateAdded: toUnixTime(values.dateAdded),
+      dappName: values.dappName.trim(),
+      category: values.category,
+      logo: values.logo.trim().replace(/\/+$/, ''),
+      website: values.website.trim().replace(/\/+$/, ''),
+      twitter: values.twitter.trim(),
+      discord: values.discord.trim(),
+      telegram: values.telegram.trim(),
+      youtube: values.youtube.trim(),
+      github: values.github.trim(),
+    }),
   });
+
+  const storedValues = getFromLocalStorage(_dappForm);
+
+  const handleFormSubmit = useCallback(
+    (formValues: DappForm) => {
+      const mergedValues = {
+        ...storedValues,
+        [formValues.dappName.toLowerCase()]: {
+          ...formValues,
+        },
+      };
+      setMergedFormData(mergedValues);
+      startSavingData();
+
+      if (
+        storedValues &&
+        isKeyInLocalStorage(formValues.dappName, storedValues)
+      ) {
+        openDataOverwrite();
+      } else {
+        showHideNotification(true);
+        saveToLocalStorage(_dappForm, mergedValues);
+
+        setTimeout(() => {
+          showHideNotification(false);
+          stopSavingData();
+          form.reset();
+        }, NOTIFICATION_DELAY);
+      }
+    },
+    [form, openDataOverwrite, startSavingData, stopSavingData, storedValues],
+  );
+
+  const handleSubmit = form.onSubmit((values) => handleFormSubmit(values));
 
   return (
     <>
-      <form
-        onSubmit={form.onSubmit((values) => handleFormSubmit(values, form))}
-        className={appShellClass.fullWidth}
-      >
+      <form onSubmit={handleSubmit} className={appShellClass.fullWidth}>
         <Stack className={appShellClass.fullWidth}>
           <Box>
-            <SimpleGrid cols={2}>
-              <TextInput
-                label="Name"
-                placeholder="Enter Dapp name"
-                withAsterisk
-                key={form.key('dapp.0.name')}
-                {...form.getInputProps('dapp.0.name')}
+            <Fieldset legend="Dapp Details">
+              <SimpleGrid cols={{ base: 1, sm: 2 }}>
+                <TextInput
+                  label="Dapp Name"
+                  placeholder="Enter Dapp name"
+                  leftSection={<IconBrandAppleArcade stroke={_iconStroke} />}
+                  withAsterisk
+                  key={form.key('dappName')}
+                  {...form.getInputProps('dappName')}
+                />
+                <Select
+                  label="Category"
+                  placeholder="Select category"
+                  leftSection={<IconCategory2 stroke={_iconStroke} />}
+                  withAsterisk
+                  checkIconPosition="right"
+                  data={_dappCategory}
+                  withScrollArea={false}
+                  key={form.key('category')}
+                  {...form.getInputProps('category')}
+                />
+                <TextInput
+                  label="Logo"
+                  placeholder="Enter logo URL"
+                  leftSection={<IconPhoto stroke={_iconStroke} />}
+                  key={form.key('logo')}
+                  {...form.getInputProps('logo')}
+                />
+                <DatePickerInput
+                  label="Date Added"
+                  valueFormat="DD-MMM-YYYY"
+                  leftSection={<IconCalendar stroke={_iconStroke} />}
+                  leftSectionPointerEvents="none"
+                  key={form.key('dateAdded')}
+                  {...form.getInputProps('dateAdded')}
+                  withAsterisk
+                />
+              </SimpleGrid>
+              <Divider />
+              <SimpleGrid cols={{ base: 1, sm: 2 }}>
+                {inputFields.map((field) => generateTextInput(form, field))}
+              </SimpleGrid>
+              <ResetFormModal
+                resetFormState={resetFormState}
+                closeResetForm={closeResetForm}
+                form={form}
               />
-              <Select
-                label="Category"
-                placeholder="Select category"
-                withAsterisk
-                checkIconPosition="right"
-                data={_dappCategory}
-                withScrollArea={false}
-                key={form.key('dapp.0.category')}
-                {...form.getInputProps('dapp.0.category')}
+              <DataOverwriteModal
+                dataOverwriteState={dataOverwriteState}
+                closeDataOverwrite={closeDataOverwrite}
+                stopSavingData={stopSavingData}
+                mergedFormData={mergedFormData}
+                form={form}
+                showHideNotification={showHideNotification}
+                formName={_dappForm}
               />
-              <TextInput
-                label="Logo"
-                placeholder="Enter logo"
-                key={form.key('dapp.0.logo')}
-                {...form.getInputProps('dapp.0.logo')}
-              />
-              <DatePickerInput
-                label="Date Added"
-                valueFormat="DD-MMM-YYYY"
-                key={form.key('dapp.0.dateAdded')}
-                {...form.getInputProps('dapp.0.dateAdded')}
-                withAsterisk
-              />
-            </SimpleGrid>
-            <Divider />
-            <SimpleGrid cols={2}>
-              <TextInput
-                label="Website"
-                placeholder="Enter Website URL"
-                withAsterisk
-                key={form.key('dapp.0.website')}
-                {...form.getInputProps('dapp.0.website')}
-              />
-              <TextInput
-                label="Twitter"
-                placeholder="Enter Twitter URL"
-                withAsterisk
-                key={form.key('dapp.0.twitter')}
-                {...form.getInputProps('dapp.0.twitter')}
-              />
-              <TextInput
-                label="Discord"
-                placeholder="Enter Discord URL"
-                key={form.key('dapp.0.discord')}
-                {...form.getInputProps('dapp.0.discord')}
-              />
-              <TextInput
-                label="Telegram"
-                placeholder="Enter Telegram URL"
-                key={form.key('dapp.0.telegram')}
-                {...form.getInputProps('dapp.0.telegram')}
-              />
-              <TextInput
-                label="Youtube"
-                placeholder="Enter Youtube URL"
-                key={form.key('dapp.0.youtube')}
-                {...form.getInputProps('dapp.0.youtube')}
-              />
-              <TextInput
-                label="Github"
-                placeholder="Enter Github URL"
-                key={form.key('dapp.0.github')}
-                {...form.getInputProps('dapp.0.github')}
-              />
-            </SimpleGrid>
-            <Divider />
-            <Modal
-              opened={opened}
-              onClose={close}
-              size="auto"
-              title="Are you sure you want to reset the form?"
-              centered
-              withCloseButton={false}
-            >
-              <SimpleGrid cols={2} mt={_iconSize}>
+              <Divider />
+              <SimpleGrid cols={2}>
                 <Button
-                  onClick={() => {
-                    close();
-                  }}
+                  onClick={openResetForm}
+                  disabled={savingDataState || dataOverwriteState}
                 >
-                  No
+                  Reset Form
                 </Button>
                 <Button
-                  onClick={() => {
-                    console.log('Resetting form');
-                    form.reset();
-                    close();
-                  }}
+                  type="submit"
+                  loading={savingDataState}
+                  disabled={savingDataState || dataOverwriteState}
+                  className={buttonClass.buttonSelected}
                 >
-                  Yes
+                  Save
                 </Button>
               </SimpleGrid>
-            </Modal>
+            </Fieldset>
           </Box>
-          <Stack>
-            <SimpleGrid cols={2}>
-              <Button onClick={open}>Reset Form</Button>
-              <Button
-                onClick={() => {
-                  console.table(form.getValues().dapp);
-                }}
-              >
-                check log
-              </Button>
-            </SimpleGrid>
-            <Button
-              type="submit"
-              mb={_iconHalfSize}
-              className={buttonClass.buttonSelected}
-            >
-              Save
-            </Button>
-          </Stack>
         </Stack>
       </form>
     </>
