@@ -23,6 +23,16 @@
   }
 }
 
+.tabBarDefault {
+  composes: buttonDefault;
+  box-shadow: none !important;
+}
+
+.tabBarSelected {
+  composes: buttonSelected;
+  box-shadow: none !important;
+}
+
 .socialButtonDefault {
   @mixin hover {
     transform: scale(0.95);

@@ -28,8 +28,8 @@ const TabBar = () => {
           size={_tabBarButtonSize}
           className={
             isCurrentPageSelected(item.webURL)
-              ? buttonClass.buttonSelected
-              : buttonClass.buttonDefault
+              ? buttonClass.tabBarSelected
+              : buttonClass.tabBarDefault
           }
         >
           {item.icon}
