@@ -1,0 +1,8 @@
+.scrollbar {
+  &[data-orientation='horizontal'] .thumb {
+    background-color: light-dark(
+      var(--hover-color-secondary),
+      var(--hover-color-secondary)
+    );
+  }
+}

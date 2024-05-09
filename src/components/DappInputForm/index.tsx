@@ -46,13 +46,13 @@ import appShellClass from '@style/Appshell.module.css';
 import buttonClass from '@style/Button.module.css';
 
 import DataOverwriteModal from './DataOverwriteModal';
+import ResetFormModal from './ResetFormModal';
 import {
   generateTextInput,
   initialValues,
   inputFields,
   validateForm,
-} from './FormConstant';
-import ResetFormModal from './ResetFormModal';
+} from './util';
 
 const notificationProps: NotificationShowHideProps = {
   id: 'savingData',

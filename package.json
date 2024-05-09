@@ -20,11 +20,11 @@
     "go": "next lint & next build & next start"
   },
   "dependencies": {
-    "@mantine/core": "^7.9.0",
-    "@mantine/dates": "^7.9.0",
-    "@mantine/form": "^7.9.0",
-    "@mantine/hooks": "^7.9.0",
-    "@mantine/notifications": "^7.9.0",
+    "@mantine/core": "^7.9.1",
+    "@mantine/dates": "^7.9.1",
+    "@mantine/form": "^7.9.1",
+    "@mantine/hooks": "^7.9.1",
+    "@mantine/notifications": "^7.9.1",
     "@serwist/next": "^9.0.2",
     "@tabler/icons-react": "^3.3.0",
     "dayjs": "^1.11.11",
@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/node": "^20.12.8",
+    "@types/node": "^20.12.11",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "@types/voca": "^1.4.5",

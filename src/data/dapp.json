@@ -1,0 +1,86 @@
+{
+  "metamask": {
+    "dateAdded": 1714926583,
+    "dappName": "Metamask",
+    "category": "Wallet",
+    "logo": "",
+    "website": "https://metamask.io",
+    "dappSocial": {
+      "twitter": "MetaMask",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": "MetaMask"
+    }
+  },
+  "rabby": {
+    "dateAdded": 1714926583,
+    "dappName": "Rabby",
+    "category": "Wallet",
+    "logo": "",
+    "website": "https://rabby.io",
+    "dappSocial": {
+      "twitter": "Rabby_io",
+      "discord": "seFBCWmUre",
+      "telegram": "",
+      "youtube": "",
+      "github": "RabbyHub"
+    }
+  },
+  "grass": {
+    "dateAdded": 1714926583,
+    "dappName": "Grass",
+    "category": "Depin",
+    "logo": "",
+    "website": "https://www.getgrass.io",
+    "dappSocial": {
+      "twitter": "getgrass_io",
+      "discord": "8NxzRj9ayN",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    }
+  },
+  "bankless": {
+    "dateAdded": 1714926583,
+    "dappName": "Bankless",
+    "category": "Media",
+    "logo": "",
+    "website": "http://bankless.com",
+    "dappSocial": {
+      "twitter": "BanklessHQ",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    }
+  },
+  "io.net": {
+    "dateAdded": 1714926583,
+    "dappName": "io.net",
+    "category": "Depin",
+    "logo": "",
+    "website": "https://io.net",
+    "dappSocial": {
+      "twitter": "ionet",
+      "discord": "ionetofficial",
+      "telegram": "io_net",
+      "youtube": "",
+      "github": "ionet-official"
+    }
+  },
+  "zerolimit": {
+    "dateAdded": 1714937526,
+    "dappName": "Zerolimit",
+    "category": "Others",
+    "logo": "",
+    "website": "https://www.zerolimit.app",
+    "dappSocial": {
+      "twitter": "0xJohnnie",
+      "discord": "0xJohnnie",
+      "telegram": "Johnnie",
+      "youtube": "0xJohnnie",
+      "github": "0xJohnnie"
+    }
+  }
+}

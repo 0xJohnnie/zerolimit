@@ -88,13 +88,17 @@ export const formatDate = (date: Date) => {
   return `${year}-${month}-${day}`;
 };
 
+export const getFromLocalStorage = (objName: string) => {
+  const storedValue = window.localStorage.getItem(objName);
+  return storedValue ? JSON.parse(storedValue) : {};
+};
+
 export const saveToLocalStorage = (objName: string, values: any) => {
   window.localStorage.setItem(objName, JSON.stringify(values));
 };
 
-export const getFromLocalStorage = (objName: string) => {
-  const storedValue = window.localStorage.getItem(objName);
-  return storedValue ? JSON.parse(storedValue) : {};
+export const deleteFromLocalStorage = (objName: string) => {
+  window.localStorage.removeItem(objName);
 };
 
 export const isKeyInLocalStorage = (
@@ -113,19 +117,16 @@ export const isKeyInLocalStorage = (
   return lowerCaseKeys.includes(lowerCaseInput);
 };
 
-const showNotificationMessage = ({
-  id,
+export const showNotificationMessage = ({
   title,
   autoCloseDuration,
   message,
 }: {
-  id: string;
   title: string;
   message: string;
   autoCloseDuration?: number;
 }) => {
   const notificationProps = {
-    id,
     title,
     loading: false,
     autoClose: autoCloseDuration ?? 1500,

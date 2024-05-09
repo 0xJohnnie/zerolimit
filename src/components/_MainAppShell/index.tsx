@@ -110,7 +110,7 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
         <AppShell.Main>
           <Center>
             <ScrollArea.Autosize type="never" h={cHeight} w={cWidth}>
-              <Stack h={cHeight} className={appShellClass.fullWidth}>
+              <Stack h={cHeight} p={8} className={appShellClass.fullWidth}>
                 {children}
               </Stack>
             </ScrollArea.Autosize>
