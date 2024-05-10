@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 
-import { Stack, Text } from '@mantine/core';
+import { Stack, Text, Title } from '@mantine/core';
 
 import InstallPWA from '@components/Pwa';
 
@@ -17,11 +18,19 @@ export const metadata: Metadata = {
   },
 };
 
+const StorageSettings = dynamic(() => import('./storageSettings'));
+
 const Settings = () => {
   return (
     <>
       <Stack className={appShellClasses.headerFullWidth}>
-        <h1 className={_cssTitle}>Settings</h1>
+        <Stack>
+          <Title className={_cssTitle}>Settings</Title>
+          <Title order={6} mt={8}>
+            Manage all settings at a glance
+          </Title>
+          <StorageSettings />
+        </Stack>
 
         <Stack>
           <InstallPWA />
