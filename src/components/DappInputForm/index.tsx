@@ -30,6 +30,7 @@ import {
   _dappCategory,
   _dappForm,
   _iconStroke,
+  _lStorageDappStore,
   DATA_SAVING_DELAY,
   NOTIFICATION_CLOSE_DELAY,
 } from '@utils/constant';
@@ -122,7 +123,7 @@ const DappInputForm = () => {
     }),
   });
 
-  const storedValues = getFromLocalStorage(_dappForm);
+  const storedValues = getFromLocalStorage(_lStorageDappStore);
 
   const handleFormSubmit = useCallback(
     (formValues: DappForm) => {
@@ -142,7 +143,7 @@ const DappInputForm = () => {
         openDataOverwrite();
       } else {
         showHideNotification(true);
-        saveToLocalStorage(_dappForm, mergedValues);
+        saveToLocalStorage(_lStorageDappStore, mergedValues);
 
         setTimeout(() => {
           showHideNotification(false);

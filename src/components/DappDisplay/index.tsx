@@ -12,7 +12,8 @@ import {
   Title,
 } from '@mantine/core';
 
-import { _iconHalfSize } from '@utils/constant';
+import { _iconHalfSize, _lStorageSettings } from '@utils/constant';
+import { saveToLocalStorage } from '@utils/util';
 
 import dappStoreScrollbarClass from '@style/DappStoreScrollbar.module.css';
 import textClass from '@style/Text.module.css';
@@ -21,8 +22,13 @@ import { DappCard } from './DappCard';
 import { useDappData } from './useDappData';
 
 const DappDisplay = () => {
-  const { loading, categoryList, filteredData, value, setValue } =
-    useDappData();
+  const {
+    loading,
+    categoryList,
+    filteredData,
+    selectedCategory,
+    setSelectedCategory,
+  } = useDappData();
 
   const handleWebsiteClick = useCallback(
     (event: { preventDefault: () => void }, website: string) => {
@@ -42,6 +48,14 @@ const DappDisplay = () => {
     [],
   );
 
+  const handleChange = useCallback((selectedCategory: string) => {
+    setSelectedCategory(selectedCategory);
+    saveToLocalStorage(_lStorageSettings, {
+      dappStore: { selectedCategory: selectedCategory },
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const dappCards = useMemo(() => {
     return Object.entries(filteredData).map(([key, field]) => (
       <DappCard
@@ -59,7 +73,11 @@ const DappDisplay = () => {
         <Skeleton visible={loading}>
           {filteredData && Object.keys(filteredData).length > 0 ? (
             <>
-              <Chip.Group multiple={false} value={value} onChange={setValue}>
+              <Chip.Group
+                multiple={false}
+                value={selectedCategory}
+                onChange={handleChange}
+              >
                 <ScrollArea
                   classNames={dappStoreScrollbarClass}
                   type="always"

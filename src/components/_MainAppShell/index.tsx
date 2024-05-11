@@ -1,7 +1,9 @@
 'use client';
 
+import defaultAppSettings from '@data/defaultAppSettings.json';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 import {
   AppShell,
@@ -32,10 +34,16 @@ import {
   _hrefHome,
   _logo,
   _logoSize,
+  _lStorageSettings,
   _navBarWidth,
   _showThemeToggle,
 } from '@utils/constant';
-import { useCalcWidthHeight, useIsMobileScreen } from '@utils/util';
+import {
+  getFromLocalStorage,
+  saveToLocalStorage,
+  useCalcWidthHeight,
+  useIsMobileScreen,
+} from '@utils/util';
 
 import appShellClass from '@style/Appshell.module.css';
 
@@ -45,6 +53,15 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
 
   const isMobileScreen = useIsMobileScreen();
   const { cWidth, cHeight } = useCalcWidthHeight();
+
+  useEffect(() => {
+    const settings = getFromLocalStorage(_lStorageSettings);
+
+    if (!settings) {
+      saveToLocalStorage(_lStorageSettings, defaultAppSettings);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return screenHeight === 0 || screenWidth === 0 ? (
     <LoadingScreen />

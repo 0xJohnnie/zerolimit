@@ -5,7 +5,7 @@ import { useCallback } from 'react';
 import { Button, Fieldset, SimpleGrid, Title } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
-import { _dappForm, NOTIFICATION_CLOSE_DELAY } from '@utils/constant';
+import { _lStorageDappStore, NOTIFICATION_CLOSE_DELAY } from '@utils/constant';
 import { deleteFromLocalStorage, showNotificationMessage } from '@utils/util';
 
 const StorageSettings = () => {
@@ -19,7 +19,7 @@ const StorageSettings = () => {
       message: 'Local Storage successfully cleared',
       autoCloseDuration: NOTIFICATION_CLOSE_DELAY,
     });
-    deleteFromLocalStorage(_dappForm);
+    deleteFromLocalStorage(_lStorageDappStore);
 
     setTimeout(() => {
       stopLoadingState();

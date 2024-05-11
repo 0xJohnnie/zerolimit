@@ -90,11 +90,20 @@ export const formatDate = (date: Date) => {
 
 export const getFromLocalStorage = (objName: string) => {
   const storedValue = window.localStorage.getItem(objName);
-  return storedValue ? JSON.parse(storedValue) : {};
+  return storedValue ? JSON.parse(storedValue) : null;
 };
 
 export const saveToLocalStorage = (objName: string, values: any) => {
-  window.localStorage.setItem(objName, JSON.stringify(values));
+  let localStorageData = {};
+
+  const existingData = window.localStorage.getItem(objName);
+  if (existingData) {
+    localStorageData = JSON.parse(existingData);
+  }
+
+  const updatedData = JSON.stringify({ ...localStorageData, ...values });
+
+  window.localStorage.setItem(objName, updatedData);
 };
 
 export const deleteFromLocalStorage = (objName: string) => {

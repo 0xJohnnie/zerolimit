@@ -1,7 +1,8 @@
 import dappDataBackup from '@data/dapp.json';
+import defaultAppSettings from '@data/defaultAppSettings.json';
 import { useEffect, useState } from 'react';
 
-import { _dappForm } from '@utils/constant';
+import { _lStorageDappStore, _lStorageSettings } from '@utils/constant';
 import { getFromLocalStorage, saveToLocalStorage } from '@utils/util';
 
 import { DappForm } from '@Interface/form';
@@ -13,29 +14,29 @@ export const useDappData = () => {
   const [filteredData, setFilteredData] = useState<Record<string, DappForm>>(
     {},
   );
-  const [value, setValue] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
 
   useEffect(() => {
     const fetchData = () => {
       try {
-        let storedValue: Record<string, DappForm> | null =
-          getFromLocalStorage(_dappForm);
+        let localStorage: Record<string, DappForm> | null =
+          getFromLocalStorage(_lStorageDappStore);
 
-        if (storedValue === null || Object.keys(storedValue).length === 0) {
-          storedValue = dappDataBackup;
-          saveToLocalStorage(_dappForm, storedValue);
+        if (!localStorage) {
+          localStorage = dappDataBackup;
+          saveToLocalStorage(_lStorageDappStore, localStorage);
         }
 
-        if (Object.keys(storageData).length === 0 && storedValue) {
+        if (localStorage) {
           const uniqueCategories = [
             'All',
             ...new Set(
-              Object.values(storedValue).map((field) => field.category),
+              Object.values(localStorage).map((field) => field.category),
             ),
           ];
           setCategoryList(uniqueCategories);
-          setStorageData(storedValue);
-          setFilteredData(storedValue);
+          setStorageData(localStorage);
+          setFilteredData(localStorage);
         }
       } catch (e) {
         console.error('Failed to parse stored value');
@@ -47,15 +48,39 @@ export const useDappData = () => {
   }, []);
 
   useEffect(() => {
+    let settings = getFromLocalStorage(_lStorageSettings);
+
+    if (!settings.dappStore) {
+      settings.dappStore = { ...defaultAppSettings.dappStore };
+      saveToLocalStorage(_lStorageSettings, settings);
+    }
+    setSelectedCategory(settings.dappStore.selectedCategory);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     const newFilteredData = Object.entries(storageData)
-      .filter(([key, field]) => value === 'All' || field.category === value)
+      .filter(
+        ([key, field]) =>
+          selectedCategory === 'All' || field.category === selectedCategory,
+      )
       .reduce(
         (acc, [key, field]) => ({ ...acc, [key]: field }),
         {} as Record<string, DappForm>,
       );
+
     setFilteredData(newFilteredData);
     setLoading(Object.keys(newFilteredData).length === 0);
-  }, [value, storageData]);
 
-  return { loading, categoryList, filteredData, value, setValue };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCategory, storageData]);
+
+  return {
+    loading,
+    categoryList,
+    filteredData,
+    selectedCategory,
+    setSelectedCategory,
+  };
 };
