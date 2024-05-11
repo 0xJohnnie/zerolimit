@@ -1,4 +1,4 @@
-import dappDataBackup from '@data/dapp.json';
+import defaultDappStoreData from '@data/dapp.json';
 import defaultAppSettings from '@data/defaultAppSettings.json';
 import { useEffect, useState } from 'react';
 
@@ -22,22 +22,18 @@ export const useDappData = () => {
         let localStorage: Record<string, DappForm> | null =
           getFromLocalStorage(_lStorageDappStore);
 
-        if (!localStorage) {
-          localStorage = dappDataBackup;
-          saveToLocalStorage(_lStorageDappStore, localStorage);
-        }
+        localStorage = { ...defaultDappStoreData, ...localStorage };
+        saveToLocalStorage(_lStorageDappStore, localStorage);
 
-        if (localStorage) {
-          const uniqueCategories = [
-            'All',
-            ...new Set(
-              Object.values(localStorage).map((field) => field.category),
-            ),
-          ];
-          setCategoryList(uniqueCategories);
-          setStorageData(localStorage);
-          setFilteredData(localStorage);
-        }
+        const uniqueCategories = [
+          'All',
+          ...new Set(
+            Object.values(localStorage).map((field) => field.category),
+          ),
+        ];
+        setCategoryList(uniqueCategories);
+        setStorageData(localStorage);
+        setFilteredData(localStorage);
       } catch (e) {
         console.error('Failed to parse stored value');
       }
