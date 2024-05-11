@@ -27,7 +27,7 @@ const Settings = () => {
         <Stack>
           <Title className={_cssTitle}>Settings</Title>
           <Title order={6} mt={8}>
-            Manage all settings at a glance
+            Manage settings at a glance
           </Title>
           <StorageSettings />
         </Stack>

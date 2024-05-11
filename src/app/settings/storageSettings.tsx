@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Button, Fieldset, SimpleGrid, Title } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -12,30 +12,44 @@ const StorageSettings = () => {
   const [loadingState, { close: stopLoadingState, open: startLoadingState }] =
     useDisclosure(false);
 
-  const handleClick = useCallback(() => {
+  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+
+  const sectionHeader = `Local Storage`;
+  const dappStore = `Dapp Store list`;
+
+  const handleClick = (prefixMessage: string, storageName: string) => {
     startLoadingState();
     showNotificationMessage({
-      title: 'Local Storage',
-      message: 'Local Storage successfully cleared',
+      title: sectionHeader,
+      message: `${prefixMessage} successfully cleared`,
       autoCloseDuration: NOTIFICATION_CLOSE_DELAY,
     });
-    deleteFromLocalStorage(_lStorageDappStore);
+    deleteFromLocalStorage(storageName);
 
-    setTimeout(() => {
+    const id = setTimeout(() => {
       stopLoadingState();
-    }, 750);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    }, NOTIFICATION_CLOSE_DELAY);
+    setTimeoutId(id);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [timeoutId]);
 
   return (
     <>
-      <Fieldset legend="Storage">
+      <Fieldset legend={sectionHeader}>
         <SimpleGrid cols={2}>
-          <Title order={3}>Local Storage</Title>
-
-          <Button loading={loadingState} onClick={handleClick} fullWidth>
-            Clear Local Storage
-          </Button>
+          <Title order={3}>{dappStore}</Title>
+          <Button
+            loading={loadingState}
+            onClick={() => handleClick(dappStore, _lStorageDappStore)}
+            fullWidth
+          >{`Clear ${dappStore}`}</Button>
         </SimpleGrid>
       </Fieldset>
     </>
