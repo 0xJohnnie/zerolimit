@@ -10,6 +10,7 @@ import AppConfig from '@utils/AppConfig';
 import { _defaultColorScheme, _logo, _logoApple } from '@utils/constant';
 import { theme } from '@utils/theme';
 
+import AuthParticle from './AuthParticle';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -67,10 +68,15 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <ColorSchemeScript defaultColorScheme={_defaultColorScheme} />
       </head>
       <body>
-        <MantineProvider theme={theme} defaultColorScheme={_defaultColorScheme}>
-          <Notifications position="top-right" style={{ marginTop: 48 }} />
-          <MainAppShell>{children}</MainAppShell>
-        </MantineProvider>
+        <AuthParticle>
+          <MantineProvider
+            theme={theme}
+            defaultColorScheme={_defaultColorScheme}
+          >
+            <Notifications position="top-right" style={{ marginTop: 48 }} />
+            <MainAppShell>{children}</MainAppShell>
+          </MantineProvider>
+        </AuthParticle>
       </body>
     </html>
   );

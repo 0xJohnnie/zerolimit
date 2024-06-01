@@ -1,6 +1,7 @@
 'use client';
 
 import defaultAppSettings from '@data/defaultAppSettings.json';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -103,7 +104,10 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
                 <Title order={2}>{AppConfig.site_name}</Title>
               </Center>
             </Link>
-            <Group>{_showThemeToggle && <ColorSchemeToggle />}</Group>
+            <Group>
+              {_showThemeToggle && <ColorSchemeToggle />}
+              <ConnectButton />
+            </Group>
           </Group>
         </AppShell.Header>
         {/* +              END OF HEADER              + */}

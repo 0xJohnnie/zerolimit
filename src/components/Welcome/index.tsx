@@ -1,10 +1,10 @@
 'use client';
 
-import AppConfig from '@/utils/AppConfig';
 import Link from 'next/link';
 
-import { Button, Text, Title } from '@mantine/core';
+import { Button, Divider, Text, Title } from '@mantine/core';
 
+import AppConfig from '@utils/AppConfig';
 import { _hrefDappstore, _iconHalfSize } from '@utils/constant';
 
 import buttonClass from '@style/Button.module.css';
@@ -30,6 +30,8 @@ export function Welcome() {
         <br />
         Do your own research and proceed at your own risk
       </Text>
+
+      <Divider />
       <Button
         component={Link}
         href={_hrefDappstore}
