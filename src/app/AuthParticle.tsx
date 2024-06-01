@@ -41,7 +41,10 @@ const AuthParticle = ({ children }: { children: any }) => {
 
         chainName: 'Ethereum',
         chainId: 1,
-        wallet: { displayWalletEntry: true },
+        wallet: {
+          displayWalletEntry: false,
+        },
+        preload: true,
       }),
     [],
   );

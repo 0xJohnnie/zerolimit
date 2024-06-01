@@ -43,7 +43,7 @@ const StorageSettings = () => {
   return (
     <>
       <Fieldset legend={sectionHeader}>
-        <SimpleGrid cols={2}>
+        <SimpleGrid cols={{ base: 1, sm: 2, lg: 2 }}>
           <Title order={3}>{dappStore}</Title>
           <Button
             loading={loadingState}
