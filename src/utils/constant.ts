@@ -59,8 +59,8 @@ export const DATA_SAVING_DELAY = 1000;
 export const _dappForm = 'dappForm';
 
 // Local storage names
-export const _lStorageDappStore = 'dappStore';
-export const _lStorageSettings = 'settings';
+export const _lStorageDappStore = 'z-dappStore';
+export const _lStorageSettings = 'z-settings';
 
 export const _dappCategory = [
   'All',

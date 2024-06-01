@@ -1,7 +1,6 @@
 'use client';
 
 import defaultAppSettings from '@data/defaultAppSettings.json';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -22,6 +21,7 @@ import TabBar from '@components/_TabBar';
 import ColorSchemeToggle from '@components/ColorSchemeToggle';
 import SocialMedia from '@components/HyperLink';
 import LoadingScreen from '@components/LoadingScreen';
+import RainbowButton from '@components/RainbowButton';
 
 import AppConfig from '@utils/AppConfig';
 import {
@@ -88,6 +88,7 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
             className={appShellClass.headerFooterContent}
             wrap="nowrap"
             preventGrowOverflow
+            style={{ overflow: 'visible' }}
           >
             <Link href={_hrefHome} aria-label="logo">
               <Center style={{ gap: 8 }}>
@@ -106,7 +107,7 @@ const MainAppShell = ({ children }: { children: React.ReactNode }) => {
             </Link>
             <Group>
               {_showThemeToggle && <ColorSchemeToggle />}
-              <ConnectButton />
+              <RainbowButton />
             </Group>
           </Group>
         </AppShell.Header>
