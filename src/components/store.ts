@@ -26,10 +26,6 @@ export const useStore = create<storeType>()(
         - localStorage (persist till manually deleted)
         - sessionStorage (persist till browser closed)
         */
-        getStorage: () => localStorage,
-
-        // store partial info in storage
-        // partialize: (state) => ({ opened: state.opened }),
       },
     ),
   ),
