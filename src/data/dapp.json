@@ -2,7 +2,7 @@
   "metamask": {
     "dateAdded": 1714926583,
     "dappName": "Metamask",
-    "category": "Wallet",
+    "category": "Software",
     "logo": "",
     "website": "https://metamask.io",
     "dappSocial": {
@@ -11,12 +11,13 @@
       "telegram": "",
       "youtube": "",
       "github": "MetaMask"
-    }
+    },
+    "mainCategory": "Wallet"
   },
   "rabby": {
     "dateAdded": 1714926583,
     "dappName": "Rabby",
-    "category": "Wallet",
+    "category": "Software",
     "logo": "",
     "website": "https://rabby.io",
     "dappSocial": {
@@ -25,12 +26,13 @@
       "telegram": "",
       "youtube": "",
       "github": "RabbyHub"
-    }
+    },
+    "mainCategory": "Wallet"
   },
   "grass": {
     "dateAdded": 1714926583,
     "dappName": "Grass",
-    "category": "Depin",
+    "category": "DePIN",
     "logo": "",
     "website": "https://www.getgrass.io",
     "dappSocial": {
@@ -39,7 +41,8 @@
       "telegram": "",
       "youtube": "",
       "github": ""
-    }
+    },
+    "mainCategory": "Infrastructure"
   },
   "bankless": {
     "dateAdded": 1714926583,
@@ -53,12 +56,13 @@
       "telegram": "",
       "youtube": "",
       "github": ""
-    }
+    },
+    "mainCategory": "Social"
   },
   "io.net": {
     "dateAdded": 1714926583,
     "dappName": "io.net",
-    "category": "Depin",
+    "category": "DePIN",
     "logo": "",
     "website": "https://io.net",
     "dappSocial": {
@@ -67,7 +71,8 @@
       "telegram": "io_net",
       "youtube": "",
       "github": "ionet-official"
-    }
+    },
+    "mainCategory": "Infrastructure"
   },
   "zerolimit": {
     "dateAdded": 1714937526,
@@ -81,6 +86,1147 @@
       "telegram": "Johnnie",
       "youtube": "0xJohnnie",
       "github": "0xJohnnie"
-    }
+    },
+    "mainCategory": "Other"
+  },
+  "solflare": {
+    "dateAdded": 1745588057,
+    "dappName": "Solflare",
+    "category": "Software",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "solflare",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Wallet"
+  },
+  "Backpack": {
+    "dateAdded": 1745588057,
+    "dappName": "Backpack",
+    "category": "Software",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "Backpack",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Wallet"
+  },
+  "crypto": {
+    "dateAdded": 1745588057,
+    "dappName": "Bloomberg Crypto",
+    "category": "Media",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "crypto",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "_SEAL_Org": {
+    "dateAdded": 1745588057,
+    "dappName": "Security Alliance",
+    "category": "Security",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "_SEAL_Org",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Security"
+  },
+  "TreehouseFi": {
+    "dateAdded": 1745588057,
+    "dappName": "Treehouse",
+    "category": "DeFi",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "TreehouseFi",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "gelatonetwork": {
+    "dateAdded": 1745588057,
+    "dappName": "Gelato",
+    "category": "Rollup",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "gelatonetwork",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "AbstractChain": {
+    "dateAdded": 1745588057,
+    "dappName": "Abstract",
+    "category": "L1",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "AbstractChain",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "basepaint_xyz": {
+    "dateAdded": 1745588057,
+    "dappName": "BasePaint",
+    "category": "Art",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "basepaint_xyz",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "pumpdotfun": {
+    "dateAdded": 1745588057,
+    "dappName": "pump.fun",
+    "category": "Degen",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "pumpdotfun",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Other"
+  },
+  "wintermute_t": {
+    "dateAdded": 1745588057,
+    "dappName": "Wintermute",
+    "category": "Market Maker",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "wintermute_t",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "OnchainKit": {
+    "dateAdded": 1745588057,
+    "dappName": "OnchainKit",
+    "category": "Dev Tools",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "OnchainKit",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Development"
+  },
+  "stereumdev": {
+    "dateAdded": 1745588057,
+    "dappName": "Stereum Node",
+    "category": "EVM",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "stereumdev",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "virtuals_io": {
+    "dateAdded": 1745596926,
+    "dappName": "Virtuals Protocol",
+    "category": "AI Agent",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "virtuals_io",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Ai Agents"
+  },
+  "freysa_ai": {
+    "dateAdded": 1745596926,
+    "dappName": "Freysa",
+    "category": "AI Agent",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "freysa_ai",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Ai Agents"
+  },
+  "BinanceUS": {
+    "dateAdded": 1745596926,
+    "dappName": "Binance US",
+    "category": "CEX",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "BinanceUS",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "LBank_Exchange": {
+    "dateAdded": 1745596926,
+    "dappName": "LBank",
+    "category": "CEX",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "LBank_Exchange",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "BithumbOfficial": {
+    "dateAdded": 1745596926,
+    "dappName": "Bithumb",
+    "category": "CEX",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "BithumbOfficial",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "upbitglobal": {
+    "dateAdded": 1745596926,
+    "dappName": "Upbit",
+    "category": "CEX",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "upbitglobal",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "bitgetglobal": {
+    "dateAdded": 1745596926,
+    "dappName": "Bitget",
+    "category": "CEX",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "bitgetglobal",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "MEXC_Official": {
+    "dateAdded": 1745596926,
+    "dappName": "MEXC",
+    "category": "CEX",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "MEXC_Official",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "Bybit_Official": {
+    "dateAdded": 1745596926,
+    "dappName": "Bybit",
+    "category": "CEX",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "Bybit_Official",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "Official_Upbit": {
+    "dateAdded": 1745596926,
+    "dappName": "Upbit KR",
+    "category": "CEX",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "Official_Upbit",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "HyperliquidX": {
+    "dateAdded": 1745596926,
+    "dappName": "Hyperliquid",
+    "category": "DeFi",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "HyperliquidX",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "ethena_labs": {
+    "dateAdded": 1745596926,
+    "dappName": "Ethena",
+    "category": "DeFi",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "ethena_labs",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "NodeOpsHQ": {
+    "dateAdded": 1745596926,
+    "dappName": "NodeOps",
+    "category": "DePIN",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "NodeOpsHQ",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "huddle01com": {
+    "dateAdded": 1745596926,
+    "dappName": "Huddle01",
+    "category": "DePIN",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "huddle01com",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "parasailnetwork": {
+    "dateAdded": 1745596926,
+    "dappName": "Parasail",
+    "category": "DePIN",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "parasailnetwork",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "heliuslabs": {
+    "dateAdded": 1745596926,
+    "dappName": "Helius",
+    "category": "Dev Tools",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "heliuslabs",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Development"
+  },
+  "thirdweb": {
+    "dateAdded": 1745596926,
+    "dappName": "thirdweb",
+    "category": "Dev Tools",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "thirdweb",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Development"
+  },
+  "orca_so": {
+    "dateAdded": 1745596926,
+    "dappName": "thirdweb",
+    "category": "DEX",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "orca_so",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "ethereumfndn": {
+    "dateAdded": 1745596926,
+    "dappName": "Ethereum Foundation",
+    "category": "EVM",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "ethereumfndn",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "EthereumPhone": {
+    "dateAdded": 1745596926,
+    "dappName": "ethOS",
+    "category": "EVM",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "EthereumPhone",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "Neon_EVM": {
+    "dateAdded": 1745596926,
+    "dappName": "Neon",
+    "category": "EVM",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "Neon_EVM",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "ETHGlobal": {
+    "dateAdded": 1745596926,
+    "dappName": "ETHGlobal",
+    "category": "EVM",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "ETHGlobal",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "imKeyOfficial": {
+    "dateAdded": 1745596926,
+    "dappName": "imKey",
+    "category": "Hardware",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "imKeyOfficial",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Wallet"
+  },
+  "SonicLabs": {
+    "dateAdded": 1745596926,
+    "dappName": "Sonic Labs",
+    "category": "L1",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "SonicLabs",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "SeiNetwork": {
+    "dateAdded": 1745596926,
+    "dappName": "Sei",
+    "category": "L1",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "SeiNetwork",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "solana": {
+    "dateAdded": 1745596926,
+    "dappName": "Solana",
+    "category": "L1",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "solana",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "WuBlockchain": {
+    "dateAdded": 1745596926,
+    "dappName": "Wu Blockchain",
+    "category": "Media",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "WuBlockchain",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "CoinsauceCrypto": {
+    "dateAdded": 1745596926,
+    "dappName": "Coinsauce",
+    "category": "Media",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "CoinsauceCrypto",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "tokenterminal": {
+    "dateAdded": 1745596926,
+    "dappName": "Token Terminal",
+    "category": "Media",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "tokenterminal",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "zachxbt": {
+    "dateAdded": 1745596926,
+    "dappName": "ZachXBT",
+    "category": "Media",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "zachxbt",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "MessariCrypto": {
+    "dateAdded": 1745596926,
+    "dappName": "Messari",
+    "category": "Media",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "MessariCrypto",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "cryptocom_rni": {
+    "dateAdded": 1745596926,
+    "dappName": "Crypto.com Research",
+    "category": "Media",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "cryptocom_rni",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "Cointelegraph": {
+    "dateAdded": 1745596926,
+    "dappName": "Cointelegraph",
+    "category": "Media",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "Cointelegraph",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "CoinDesk": {
+    "dateAdded": 1745596926,
+    "dappName": "CoinDesk",
+    "category": "Media",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "CoinDesk",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "layerggofficial": {
+    "dateAdded": 1745596926,
+    "dappName": "Layergg",
+    "category": "Media",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "layerggofficial",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "LighthouseWeb3": {
+    "dateAdded": 1745596926,
+    "dappName": "Lighthouse",
+    "category": "Node",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "LighthouseWeb3",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "ethnimbus": {
+    "dateAdded": 1745596926,
+    "dappName": "Nimbus",
+    "category": "Node",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "ethnimbus",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "dappnode": {
+    "dateAdded": 1745596926,
+    "dappName": "Dappnode",
+    "category": "Node",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "dappnode",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "divastaking": {
+    "dateAdded": 1745596926,
+    "dappName": "Diva Staking",
+    "category": "Node",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "divastaking",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "NethermindEth": {
+    "dateAdded": 1745596926,
+    "dappName": "Nethermind",
+    "category": "Node",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "NethermindEth",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "SoloditOfficial": {
+    "dateAdded": 1745596926,
+    "dappName": "Solodit - Vulnerability",
+    "category": "Security",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "SoloditOfficial",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Security"
+  },
+  "CyfrinAudits": {
+    "dateAdded": 1745596926,
+    "dappName": "Cyfrin Audits",
+    "category": "Security",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "CyfrinAudits",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Security"
+  },
+  "CodeHawks": {
+    "dateAdded": 1745596926,
+    "dappName": "Cyfrin CodeHawks",
+    "category": "Security",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "CodeHawks",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Security"
+  },
+  "l2beat": {
+    "dateAdded": 1745596926,
+    "dappName": "L2BEAT",
+    "category": "Tools",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "l2beat",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Development"
+  },
+  "dexscreener": {
+    "dateAdded": 1745596926,
+    "dappName": "DEX Screener",
+    "category": "Tools",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "dexscreener",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Development"
+  },
+  "KaitoAI": {
+    "dateAdded": 1745596926,
+    "dappName": "Kaito",
+    "category": "Tools",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "KaitoAI",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Development"
+  },
+  "wormhole": {
+    "dateAdded": 1745596926,
+    "dappName": "Wormhole",
+    "category": "Tools",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "wormhole",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Development"
+  },
+  "Ctrl_Wallet": {
+    "dateAdded": 1745596926,
+    "dappName": "Ctrl Wallet",
+    "category": "Software",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "Ctrl_Wallet",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Wallet"
+  },
+  "blumcrypto": {
+    "dateAdded": 1745596926,
+    "dappName": "Blum",
+    "category": "Software",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "blumcrypto",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Wallet"
+  },
+  "DesigLabs": {
+    "dateAdded": 1745596926,
+    "dappName": "Desig",
+    "category": "Software",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "DesigLabs",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Wallet"
+  },
+  "privy_io": {
+    "dateAdded": 1745596926,
+    "dappName": "Privy",
+    "category": "Software",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "privy_io",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Wallet"
+  },
+  "pendle_fi": {
+    "dateAdded": 1745596926,
+    "dappName": "Pendle",
+    "category": "Yield",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "pendle_fi",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "sgbuidl": {
+    "dateAdded": 1745596926,
+    "dappName": "SG Builders",
+    "category": "SG",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "sgbuidl",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "SG"
+  },
+  "BaseSingapore": {
+    "dateAdded": 1745596926,
+    "dappName": "Base Singapore",
+    "category": "SG",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "BaseSingapore",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "SG"
+  },
+  "PudgySG": {
+    "dateAdded": 1745596926,
+    "dappName": "Pudgy Penguins SG",
+    "category": "SG",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "PudgySG",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "SG"
+  },
+  "basedappHQ": {
+    "dateAdded": 1745596926,
+    "dappName": "BasedApp",
+    "category": "SG",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "basedappHQ",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "SG"
+  },
+  "vaneck_us": {
+    "dateAdded": 1745596926,
+    "dappName": "VanEck",
+    "category": "Fund",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "vaneck_us",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Finance"
+  },
+  "blur_io": {
+    "dateAdded": 1745596926,
+    "dappName": "Blur",
+    "category": "NFT",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "blur_io",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "CyfrinUpdraft": {
+    "dateAdded": 1745596926,
+    "dappName": "Cyfrin Updraft",
+    "category": "Education",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "CyfrinUpdraft",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "tryPluid": {
+    "dateAdded": 1745596926,
+    "dappName": "Pluid",
+    "category": "Education",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "tryPluid",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "celestia": {
+    "dateAdded": 1745596926,
+    "dappName": "Celestia",
+    "category": "Infra",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "celestia",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "PushChain": {
+    "dateAdded": 1745596926,
+    "dappName": "Push Chain",
+    "category": "Infra",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "PushChain",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Infrastructure"
+  },
+  "farcaster_xyz": {
+    "dateAdded": 1745596926,
+    "dappName": "Farcaster",
+    "category": "Social",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "farcaster_xyz",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
+  },
+  "interfacedapp": {
+    "dateAdded": 1745596926,
+    "dappName": "Interface",
+    "category": "Social",
+    "logo": "",
+    "website": "",
+    "dappSocial": {
+      "twitter": "interfacedapp",
+      "discord": "",
+      "telegram": "",
+      "youtube": "",
+      "github": ""
+    },
+    "mainCategory": "Social"
   }
 }
