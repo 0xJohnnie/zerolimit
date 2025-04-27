@@ -69,18 +69,20 @@ export const DappCard: FC<DappCardProps> = ({
           <Title order={2}>{field.dappName}</Title>
           <Badge color="#555">{field.category}</Badge>
         </Group>
+
         <SimpleGrid cols={{ base: 2, sm: 2, lg: 2 }} spacing="xs">
           <Button
             component={Link}
             href={field.website}
             target="_blank"
+            data-disabled={!field.website}
             onClick={(event) => handleWebsiteClick(event, field.website)}
             style={{
-              backgroundColor: 'var(--hover-color-primary)',
+              backgroundColor: field.website && 'var(--hover-color-primary)',
             }}
             radius="md"
             size="sm"
-            className={buttonClass.socialButtonDefault}
+            className={field.website && buttonClass.socialButtonDefault}
             leftSection={<IconWorld stroke={_iconStroke} />}
           >
             Website

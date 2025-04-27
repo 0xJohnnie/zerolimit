@@ -12,6 +12,7 @@ export interface DappForm {
   dateAdded: Date | number;
   dappName: string;
   category: string;
+  mainCategory?: string; // Add optional mainCategory field
   logo: string;
   website: string;
   dappSocial: DappSocial;

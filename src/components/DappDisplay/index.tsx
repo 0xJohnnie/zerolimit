@@ -2,33 +2,32 @@
 
 import { useCallback, useMemo } from 'react';
 
-import {
-  Chip,
-  Flex,
-  ScrollArea,
-  SimpleGrid,
-  Skeleton,
-  Stack,
-  Title,
-} from '@mantine/core';
+import { SimpleGrid, Skeleton, Stack, Title } from '@mantine/core';
 
-import { _iconHalfSize, _lStorageSettings } from '@utils/constant';
-import { saveToLocalStorage } from '@utils/util';
+import { _iconHalfSize } from '@utils/constant';
 
-import dappStoreScrollbarClass from '@style/DappStoreScrollbar.module.css';
+// Removed unused imports: _lStorageSettings, saveToLocalStorage, Chip, Flex, ScrollArea
+// Removed unused style import: dappStoreScrollbarClass
+import { DappForm } from '@Interface/form';
+
+// Import DappForm
 import textClass from '@style/Text.module.css';
 
 import { DappCard } from './DappCard';
 import { useDappData } from './useDappData';
 
-const DappDisplay = () => {
-  const {
-    loading,
-    categoryList,
-    filteredData,
-    selectedCategory,
-    setSelectedCategory,
-  } = useDappData();
+interface DappDisplayProps {
+  mainCategory?: string; // Existing prop for filtering via hook
+  data?: Record<string, DappForm>; // Optional prop for pre-filtered data
+}
+
+const DappDisplay = ({ mainCategory, data }: DappDisplayProps) => {
+  // Call hook unconditionally to get data if 'data' prop is not provided
+  const hookData = useDappData({ mainCategory });
+
+  // Determine loading state and data source
+  const loading = data ? false : hookData.loading; // If data prop exists, not loading
+  const displayData = data || hookData.filteredData; // Use data prop if available, else hook data
 
   const handleWebsiteClick = useCallback(
     (event: { preventDefault: () => void }, website: string) => {
@@ -48,16 +47,11 @@ const DappDisplay = () => {
     [],
   );
 
-  const handleChange = useCallback((selectedCategory: string) => {
-    setSelectedCategory(selectedCategory);
-    saveToLocalStorage(_lStorageSettings, {
-      dappStore: { selectedCategory: selectedCategory },
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // Removed handleChange function
 
   const dappCards = useMemo(() => {
-    return Object.entries(filteredData).map(([key, field]) => (
+    // Use displayData which is either the prop or from the hook
+    return Object.entries(displayData).map(([key, field]) => (
       <DappCard
         key={key}
         field={field}
@@ -65,43 +59,16 @@ const DappDisplay = () => {
         handleSocialClick={handleSocialClick}
       />
     ));
-  }, [filteredData, handleWebsiteClick, handleSocialClick]);
+  }, [displayData, handleWebsiteClick, handleSocialClick]); // Depend on displayData
 
   return (
     <>
       <Stack mt={_iconHalfSize}>
         <Skeleton visible={loading}>
-          {filteredData && Object.keys(filteredData).length > 0 ? (
+          {/* Check displayData instead of filteredData */}
+          {displayData && Object.keys(displayData).length > 0 ? (
             <>
-              <Chip.Group
-                multiple={false}
-                value={selectedCategory}
-                onChange={handleChange}
-              >
-                <ScrollArea
-                  classNames={dappStoreScrollbarClass}
-                  type="always"
-                  offsetScrollbars
-                  scrollbarSize={8}
-                  pb={8}
-                >
-                  <Flex
-                    mah={categoryList.length > 10 ? 100 : 50}
-                    bg="rgba(0, 0, 0, .3)"
-                    justify="center"
-                    align="center"
-                    direction="column"
-                    wrap="wrap"
-                  >
-                    {categoryList.map((category) => (
-                      <Chip key={category} value={category} size="sm" p={8}>
-                        {category}
-                      </Chip>
-                    ))}
-                  </Flex>
-                </ScrollArea>
-              </Chip.Group>
-
+              {/* Removed Chip.Group and ScrollArea for category filtering */}
               <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} mt={16}>
                 {dappCards}
               </SimpleGrid>
