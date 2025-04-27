@@ -41,7 +41,7 @@ const DappStore = () => {
         <Title className={_cssTitle}>Dapp Store</Title>
 
         <SimpleGrid
-          cols={{ base: 1, xs: 2, sm: 3, md: 4, lg: 5 }}
+          cols={{ base: 1, xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
           spacing="lg"
           verticalSpacing="lg"
           mt="xl"

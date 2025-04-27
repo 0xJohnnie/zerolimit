@@ -69,7 +69,10 @@ const DappDisplay = ({ mainCategory, data }: DappDisplayProps) => {
           {displayData && Object.keys(displayData).length > 0 ? (
             <>
               {/* Removed Chip.Group and ScrollArea for category filtering */}
-              <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} mt={16}>
+              <SimpleGrid
+                cols={{ base: 1, xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
+                mt={16}
+              >
                 {dappCards}
               </SimpleGrid>
             </>

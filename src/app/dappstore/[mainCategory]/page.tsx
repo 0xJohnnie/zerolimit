@@ -123,7 +123,7 @@ const CategoryPage = () => {
       {/* Display Grid of Categories as Links */}
       {uniqueCategories.length > 0 ? (
         <SimpleGrid
-          cols={{ base: 2, sm: 3, md: 4, lg: 5 }}
+          cols={{ base: 1, xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
           spacing="lg"
           verticalSpacing="lg"
           w="100%"
@@ -146,6 +146,7 @@ const CategoryPage = () => {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
+                  flexWrap: 'wrap', // Allow content to wrap
                 }}
               >
                 {category.name}
